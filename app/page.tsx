@@ -250,75 +250,92 @@ export default function Home() {
       </section>
 
       {/* Mission */}
-      <section id="apropos" className="bg-white flex">
-        <div className="bg-[#7B1C1C] w-2" />
-        <div className="flex-1 py-10 px-10 flex gap-12 items-center flex-col lg:flex-row">
+      <section
+        id="apropos"
+        className="relative bg-[#FDF8F2] py-20 px-6 md:px-10 overflow-hidden"
+      >
+        {/* décor fond */}
+        <div className="absolute top-0 left-0 w-32 h-32 bg-[#7B1C1C]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#5A8C1A]/10 rounded-full blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Texte */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex-1"
+            className="max-w-xl"
           >
-            <div className="text-[10px] font-medium text-[#5A8C1A] tracking-[0.12em] uppercase mb-2.5">
-              Notre mission
-            </div>
+            <span className="inline-flex items-center gap-2 text-[11px] font-medium text-[#5A8C1A] tracking-[0.18em] uppercase mb-4 border border-[#5A8C1A] px-3 py-1 rounded-lg">
+              <span className="w-2 h-2 rounded-full bg-[#5A8C1A]" />
+              Notre vision
+            </span>
+
             <h2
               style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[26px] text-[#7B1C1C] mb-3.5 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl text-[#7B1C1C] leading-tight mb-6"
             >
-              Valoriser le lait local,
+              Redonner sa juste valeur
               <br />
-              renforcer la filière
+              au lait local nigérien
             </h2>
-            <p className="text-[14px] text-[#5a3a2a] leading-relaxed">
-              Au Niger, le secteur laitier est riche mais peu structuré. A'mansi
-              est né pour changer cela : transformer le lait local en produits
-              de qualité, créer de la valeur pour les éleveurs, et rendre ces
-              produits accessibles à tous les nigériens.
+
+            <p className="text-base md:text-lg text-[#5A3A2A] leading-relaxed mb-8">
+              A’mansi construit une filière laitière plus équitable, plus
+              moderne et plus durable. Nous collectons, transformons et
+              valorisons le lait local pour offrir aux familles nigériennes des
+              produits sains, naturels et de confiance.
             </p>
           </motion.div>
+
+          {/* cartes valeurs */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full lg:w-70 grid grid-cols-2 gap-2.5"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5"
           >
             {[
               {
                 icon: "🌿",
-                title: "Authenticité",
-                desc: "100% lait local, sans compromis",
+                title: "Naturel & sain",
+                desc: "Des produits laitiers purs, issus d’un lait frais collecté localement.",
               },
               {
                 icon: "🤝",
-                title: "Équité",
-                desc: "Revenus justes pour les éleveurs",
+                title: "Impact local",
+                desc: "Nous renforçons les revenus des éleveurs et des acteurs de la filière.",
               },
               {
-                icon: "🔬",
-                title: "Qualité",
-                desc: "Processus maîtrisé de bout en bout",
+                icon: "🛡️",
+                title: "Confiance",
+                desc: "Traçabilité, hygiène et exigence qualité à chaque étape.",
               },
               {
                 icon: "📱",
                 title: "Innovation",
-                desc: "Numérique au service du local",
+                desc: "Le numérique au service d’une filière moderne et connectée.",
               },
-            ].map((val, i) => (
+            ].map((item, i) => (
               <motion.div
                 key={i}
-                whileHover={{ scale: 1.05 }}
-                className="bg-[#F5F0E8] rounded-[10px] p-3.5 border-l-[3px] border-[#5A8C1A]"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="group bg-white/80 backdrop-blur-md border border-[#7B1C1C]/10 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all cursor-pointer"
               >
-                <div className="text-lg mb-1.5">{val.icon}</div>
-                <div className="text-xs font-medium text-[#7B1C1C]">
-                  {val.title}
+                <div className="w-12 h-12 rounded-2xl bg-[#F5F0E8] flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                  {item.icon}
                 </div>
-                <div className="text-[11px] text-[#7a5a4a] mt-1 leading-snug">
-                  {val.desc}
-                </div>
+
+                <h3 className="text-lg font-semibold text-[#7B1C1C] mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-sm text-[#7A5A4A] leading-relaxed">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
