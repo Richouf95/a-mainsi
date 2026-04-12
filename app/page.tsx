@@ -1126,26 +1126,206 @@ export default function Home() {
       </section>
 
       {/* Partenaires */}
-      <section className="bg-white py-7 px-10 flex Fitems-center gap-8 overflow-x-auto">
-        <span className="text-[10px] text-[#9a7a6a] font-medium tracking-wide uppercase whitespace-nowrap">
-          Nos partenaires
-        </span>
-        <div className="w-px h-7 bg-black/10" />
-        <div className="flex gap-6 items-center flex-wrap">
-          {[
-            "Ministère de l'Élevage",
-            "FAO Niger",
-            "AREN",
-            "Chambre d'Agriculture",
-            "PNUD Niger",
-          ].map((partner, i) => (
-            <span
-              key={i}
-              className="text-[11px] font-medium text-[#b0907a] tracking-wide bg-[#f5ece6] rounded-md px-3.5 py-1.5"
+      <section className="bg-white py-14 overflow-hidden">
+        {/* Header */}
+        <div className="flex items-end justify-between px-6 md:px-10 mb-10">
+          <div>
+            <div className="flex items-center gap-2 text-[11px] font-medium text-[#5A8C1A] tracking-[0.18em] uppercase mb-2">
+              <span className="w-2 h-2 rounded-full bg-[#5A8C1A]" />
+              Nos partenaires
+            </div>
+            <h2
+              style={{ fontFamily: "var(--font-serif)" }}
+              className="text-[28px] text-[#7B1C1C] leading-tight"
             >
-              {partner}
-            </span>
-          ))}
+              Ils nous font confiance
+            </h2>
+          </div>
+          <span className="text-xs text-[#9a7a6a] hidden sm:block">
+            5 organisations
+          </span>
+        </div>
+
+        {/* Marquee */}
+        <div
+          className="relative overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 100px, black calc(100% - 100px), transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 100px, black calc(100% - 100px), transparent 100%)",
+          }}
+        >
+          <div className="flex w-max gap-4 py-4 marquee-track">
+            {[
+              {
+                initials: "ME",
+                label: "Ministère de l'Élevage",
+                type: "Gouvernement",
+                color: "#7B1C1C",
+              },
+              {
+                initials: "FAO",
+                label: "FAO Niger",
+                type: "Organisation internationale",
+                color: "#2E6B3E",
+              },
+              {
+                initials: "AR",
+                label: "AREN",
+                type: "Réseau éleveurs",
+                color: "#C26010",
+              },
+              {
+                initials: "CA",
+                label: "Chambre d'Agriculture",
+                type: "Institution",
+                color: "#5A3A2A",
+              },
+              {
+                initials: "UN",
+                label: "PNUD Niger",
+                type: "Nations Unies",
+                color: "#1A5276",
+              },
+              /* --- duplication pour boucle infinie --- */
+              {
+                initials: "ME",
+                label: "Ministère de l'Élevage",
+                type: "Gouvernement",
+                color: "#7B1C1C",
+              },
+              {
+                initials: "FAO",
+                label: "FAO Niger",
+                type: "Organisation internationale",
+                color: "#2E6B3E",
+              },
+              {
+                initials: "AR",
+                label: "AREN",
+                type: "Réseau éleveurs",
+                color: "#C26010",
+              },
+              {
+                initials: "CA",
+                label: "Chambre d'Agriculture",
+                type: "Institution",
+                color: "#5A3A2A",
+              },
+              {
+                initials: "UN",
+                label: "PNUD Niger",
+                type: "Nations Unies",
+                color: "#1A5276",
+              },
+              {
+                initials: "ME",
+                label: "Ministère de l'Élevage",
+                type: "Gouvernement",
+                color: "#7B1C1C",
+              },
+              {
+                initials: "FAO",
+                label: "FAO Niger",
+                type: "Organisation internationale",
+                color: "#2E6B3E",
+              },
+              {
+                initials: "AR",
+                label: "AREN",
+                type: "Réseau éleveurs",
+                color: "#C26010",
+              },
+              {
+                initials: "CA",
+                label: "Chambre d'Agriculture",
+                type: "Institution",
+                color: "#5A3A2A",
+              },
+              {
+                initials: "UN",
+                label: "PNUD Niger",
+                type: "Nations Unies",
+                color: "#1A5276",
+              },
+              {
+                initials: "ME",
+                label: "Ministère de l'Élevage",
+                type: "Gouvernement",
+                color: "#7B1C1C",
+              },
+              {
+                initials: "FAO",
+                label: "FAO Niger",
+                type: "Organisation internationale",
+                color: "#2E6B3E",
+              },
+              {
+                initials: "AR",
+                label: "AREN",
+                type: "Réseau éleveurs",
+                color: "#C26010",
+              },
+              {
+                initials: "CA",
+                label: "Chambre d'Agriculture",
+                type: "Institution",
+                color: "#5A3A2A",
+              },
+              {
+                initials: "UN",
+                label: "PNUD Niger",
+                type: "Nations Unies",
+                color: "#1A5276",
+              },
+            ].map((p, i) => (
+              <div
+                key={i}
+                className="w-44 shrink-0 rounded-[20px] overflow-hidden border border-[#7B1C1C]/8 bg-white cursor-default transition-all duration-200 hover:-translate-y-1.5"
+                style={{
+                  boxShadow:
+                    "0 2px 10px rgba(123,28,28,0.05), 0 1px 2px rgba(0,0,0,0.03)",
+                }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLDivElement).style.boxShadow =
+                    "0 20px 48px rgba(123,28,28,0.12), 0 4px 12px rgba(0,0,0,0.06)")
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLDivElement).style.boxShadow =
+                    "0 2px 10px rgba(123,28,28,0.05), 0 1px 2px rgba(0,0,0,0.03)")
+                }
+              >
+                {/* Zone logo */}
+                <div
+                  className="w-full h-28 flex items-center justify-center relative"
+                  style={{ background: p.color }}
+                >
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        "repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 14px)",
+                    }}
+                  />
+                  {/* Remplacer par <Image src={p.logo} fill className="object-contain p-4" alt={p.label} /> */}
+                  <span className="relative z-10 text-[20px] font-semibold text-white/90 tracking-wide">
+                    {p.initials}
+                  </span>
+                </div>
+
+                {/* Corps */}
+                <div className="px-3.5 py-3 border-t border-[#7B1C1C]/6">
+                  <p className="text-[11px] font-medium text-[#3A1A0A] leading-snug">
+                    {p.label}
+                  </p>
+                  <p className="text-[10px] text-[#b09080] mt-0.5 tracking-wide">
+                    {p.type}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
