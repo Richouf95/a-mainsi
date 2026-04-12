@@ -1332,7 +1332,7 @@ export default function Home() {
       {/* CTA */}
       <section
         id="contact"
-        className="bg-[#E87020] py-12 px-10 flex items-center justify-between gap-8 flex-col md:flex-row"
+        className="bg-[#E87020] py-12 px-8 flex items-center justify-between gap-8 flex-col md:flex-row"
       >
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -1346,29 +1346,32 @@ export default function Home() {
           >
             Prêt à rejoindre la filière ?
           </h2>
+
           <p className="text-[14px] text-white/80">
             Éleveur, distributeur ou consommateur — il y a une place pour vous
-            dans l'écosystème A'mansi.
+            dans l&apos;écosystème A&apos;mansi.
           </p>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-3"
+          className="flex flex-col sm:flex-row gap-3 w-full md:w-auto"
         >
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-white text-[#E87020] border-none rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
+            className="w-full sm:w-[220px] bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
           >
             Commander nos produits
           </motion.button>
+
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
+            className="w-full sm:w-[220px] bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
           >
             Rejoindre Proxilait
           </motion.button>
