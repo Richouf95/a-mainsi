@@ -633,16 +633,6 @@ export default function Home() {
             },
           ];
 
-          // Ordre d'affichage serpentin :
-          // Rangée 1 (gauche→droite) : étapes 0, 1
-          // Rangée 2 (droite→gauche) : étapes 3, 2  ← inversé visuellement
-          // Rangée 3 (gauche→droite) : étapes 4, 5
-          const rows: [number, number][] = [
-            [0, 1],
-            [3, 2],
-            [4, 5],
-          ];
-
           return (
             <div className="relative">
               {/* ligne centrale (desktop only) */}
