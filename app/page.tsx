@@ -1363,7 +1363,7 @@ export default function Home() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-[220px] bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
+            className="w-full sm:w-55 bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
           >
             Commander nos produits
           </motion.button>
@@ -1371,7 +1371,7 @@ export default function Home() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-[220px] bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
+            className="w-full sm:w-55 bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
           >
             Rejoindre Proxilait
           </motion.button>
@@ -1453,10 +1453,10 @@ export default function Home() {
                 Niamey, Niger
               </a>
               <a className="text-xs text-white/40 hover:text-white/70 transition-colors cursor-pointer">
-                contact@amansi.ne
+                societeamansi@gmail.com
               </a>
               <a className="text-xs text-white/40 hover:text-white/70 transition-colors cursor-pointer">
-                +227 00 00 00 00
+                +227 87 51 11 11
               </a>
               <a className="text-xs text-white/40 hover:text-white/70 transition-colors cursor-pointer">
                 Recrutement
@@ -1464,16 +1464,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-4 flex justify-between items-center flex-col sm:flex-row gap-4">
+        <div className="border-t border-white/10 pt-4 flex justify-center items-center">
           <span className="text-[11px] text-white/30">
             © 2025 A'mansi Fromagerie. Tous droits réservés.
           </span>
-          <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#8DC63F]" />
-            <span className="text-[11px] text-white/40">
-              Powered by Proxilait
-            </span>
-          </div>
         </div>
       </footer>
     </div>
