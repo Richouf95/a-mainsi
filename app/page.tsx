@@ -965,111 +965,162 @@ export default function Home() {
       </section>
 
       {/* Actualités */}
-      <section className="bg-[#F5F0E8] py-12 px-10">
-        <div className="flex items-end justify-between mb-7">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="text-[10px] font-medium text-[#5A8C1A] tracking-[0.12em] uppercase">
-              Actualités
-            </div>
-            <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[28px] text-[#7B1C1C] mt-2"
+      <section className="bg-[#F5F0E8] py-12 px-6 md:px-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="flex items-end justify-between mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              Dernières nouvelles
-            </h2>
-          </motion.div>
-          <span className="text-xs text-[#7B1C1C] font-medium border-b border-[#7B1C1C] pb-0.5 cursor-pointer hover:opacity-70 transition-opacity hidden md:inline-block">
-            Voir toutes les actualités →
-          </span>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            whileHover={{ y: -4 }}
-            className="bg-white rounded-xl overflow-hidden col-span-1 lg:col-span-2"
-          >
-            <div
-              className="h-40 flex items-end p-4"
-              style={{
-                background: "linear-gradient(135deg, #C85010, #8B2810)",
-              }}
-            >
-              <span className="bg-[#E87020] text-white text-[9px] font-medium rounded-full px-2.5 py-1 tracking-wide">
-                Proxilait
-              </span>
-            </div>
-            <div className="p-4">
-              <h3
+              <h2
                 style={{ fontFamily: "var(--font-serif)" }}
-                className="text-base text-[#7B1C1C] leading-snug mb-2"
+                className="text-[28px] md:text-[30px] text-[#7B1C1C] leading-tight"
               >
-                Proxilait : la plateforme qui va révolutionner la filière
-                laitière au Niger
-              </h3>
-              <p className="text-xs text-[#7a5a4a] leading-relaxed mt-2">
-                A'mansi lance sa solution numérique pour connecter toute la
-                chaîne du lait, de l'éleveur au consommateur final.
-              </p>
-              <div className="text-[10px] text-[#9a7a6a] mt-2.5">
-                12 mars 2025
-              </div>
-            </div>
-          </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5">
-            {[
-              {
-                tag: "Produits",
-                tagBg: "#EAF3DE",
-                tagColor: "#3B6D11",
-                title:
-                  "Lancement du Hindirmou — le beurre traditionnel nigérien en pot",
-                date: "28 fév. 2025",
-              },
-              {
-                tag: "Partenariat",
-                tagBg: "#FFF0E0",
-                tagColor: "#854F0B",
-                title:
-                  "A'mansi signe un accord avec 50 nouveaux éleveurs de la région de Dosso",
-                date: "14 jan. 2025",
-              },
-            ].map((news, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="bg-white rounded-xl p-4 flex flex-col justify-between"
-              >
-                <div>
-                  <span
-                    className="inline-block text-[9px] font-medium rounded-full px-2.5 py-1 mb-2"
-                    style={{ background: news.tagBg, color: news.tagColor }}
-                  >
-                    {news.tag}
+                Dernières nouvelles
+              </h2>
+            </motion.div>
+
+            <span className="hidden md:inline-block text-xs text-[#7B1C1C] font-medium border-b border-[#7B1C1C] pb-0.5 cursor-pointer hover:opacity-70 transition-opacity whitespace-nowrap">
+              Voir toutes les actualités →
+            </span>
+          </div>
+
+          {/* GRID 2 COLONNES MAX */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Carte principale */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -4 }}
+              className="bg-white rounded-[20px] overflow-hidden border border-[#7B1C1C]/8 cursor-pointer"
+            >
+              {/* Thumbnail avec image */}
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src="/images/gitex.jpg"
+                  alt="Participation de A'mansi à GITEX Africa"
+                  fill
+                  className="object-cover"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-[#7B1C1C]/40" />
+
+                {/* Motif */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px)",
+                  }}
+                />
+
+                {/* Infos haut */}
+                <div className="relative z-10 flex items-center justify-between p-5">
+                  <span className="bg-[#E87020] text-white text-[10px] font-medium rounded-full px-3 py-1">
+                    Événement
                   </span>
-                  <div
-                    style={{ fontFamily: "var(--font-serif)" }}
-                    className="text-[14px] text-[#7B1C1C] leading-snug mb-auto"
-                  >
-                    {news.title}
+                  <span className="text-[11px] text-white/80">
+                    12 mars 2025
+                  </span>
+                </div>
+
+                {/* Numéro */}
+                <span className="absolute bottom-3 right-5 text-[52px] text-white/10 select-none">
+                  01
+                </span>
+              </div>
+
+              {/* Body */}
+              <div className="p-5">
+                <h3
+                  style={{ fontFamily: "var(--font-serif)" }}
+                  className="text-base md:text-[17px] text-[#7B1C1C] mb-2 leading-snug"
+                >
+                  A&apos;mansi met en lumière l’innovation laitière africaine à
+                  GITEX Africa
+                </h3>
+
+                <p className="text-xs text-[#7a5a4a] leading-relaxed">
+                  Présente à GITEX Africa, A&apos;mansi a dévoilé Proxilait, sa
+                  solution numérique conçue pour moderniser la filière laitière
+                  et connecter les acteurs du secteur.
+                </p>
+
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-[#7B1C1C]/10">
+                  <span className="text-[11px] text-[#9a7a6a]">
+                    12 mars 2025
+                  </span>
+
+                  <div className="w-7 h-7 rounded-full bg-[#F5F0E8] flex items-center justify-center text-[#7B1C1C]">
+                    →
                   </div>
                 </div>
-                <div className="text-[10px] text-[#9a7a6a] mt-2.5">
-                  {news.date}
-                </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+
+            {/* Petites cartes */}
+            <div className="flex flex-col gap-6">
+              {[
+                {
+                  tag: "Produits",
+                  tagBg: "#EAF3DE",
+                  tagColor: "#3B6D11",
+                  title:
+                    "Lancement du Hindirmou — le beurre traditionnel nigérien en pot",
+                  date: "28 fév. 2025",
+                },
+                {
+                  tag: "Partenariat",
+                  tagBg: "#FFF0E0",
+                  tagColor: "#854F0B",
+                  title:
+                    "A'mansi signe un accord avec 50 nouveaux éleveurs de la région de Dosso",
+                  date: "14 jan. 2025",
+                },
+              ].map((news, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className="bg-white rounded-[20px] p-5 border border-[#7B1C1C]/8 cursor-pointer"
+                >
+                  <div>
+                    <span
+                      className="inline-block text-[10px] font-medium rounded-full px-3 py-1 mb-2.5"
+                      style={{ background: news.tagBg, color: news.tagColor }}
+                    >
+                      {news.tag}
+                    </span>
+
+                    <p
+                      style={{ fontFamily: "var(--font-serif)" }}
+                      className="text-[14px] text-[#7B1C1C] leading-snug"
+                    >
+                      {news.title}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between mt-4 pt-3 border-t border-[#7B1C1C]/10">
+                    <span className="text-[11px] text-[#9a7a6a]">
+                      {news.date}
+                    </span>
+
+                    <div className="w-7 h-7 rounded-full bg-[#F5F0E8] flex items-center justify-center text-[#7B1C1C]">
+                      →
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
