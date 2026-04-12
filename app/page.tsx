@@ -1130,10 +1130,6 @@ export default function Home() {
         {/* Header */}
         <div className="flex items-end justify-between px-6 md:px-10 mb-10">
           <div>
-            <div className="flex items-center gap-2 text-[11px] font-medium text-[#5A8C1A] tracking-[0.18em] uppercase mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#5A8C1A]" />
-              Nos partenaires
-            </div>
             <h2
               style={{ fontFamily: "var(--font-serif)" }}
               className="text-[28px] text-[#7B1C1C] leading-tight"
@@ -1141,9 +1137,6 @@ export default function Home() {
               Ils nous font confiance
             </h2>
           </div>
-          <span className="text-xs text-[#9a7a6a] hidden sm:block">
-            5 organisations
-          </span>
         </div>
 
         {/* Marquee */}
@@ -1282,7 +1275,7 @@ export default function Home() {
             ].map((p, i) => (
               <div
                 key={i}
-                className="w-44 shrink-0 rounded-[20px] overflow-hidden border border-[#7B1C1C]/8 bg-white cursor-default transition-all duration-200 hover:-translate-y-1.5"
+                className="w-44 shrink-0 rounded-[20px] overflow-hidden border border-[#7B1C1C]/8 bg-white transition-all duration-200 hover:-translate-y-1.5 cursor-pointer"
                 style={{
                   boxShadow:
                     "0 2px 10px rgba(123,28,28,0.05), 0 1px 2px rgba(0,0,0,0.03)",
