@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
   title: "A'mansi",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="h-full">
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
