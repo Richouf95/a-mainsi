@@ -74,7 +74,7 @@ export default function Home() {
         <ul className="hidden md:flex gap-7 list-none">
           <li>
             <a
-              href="#produits"
+              href="/produits"
               className="text-white/85 text-[13px] tracking-wide hover:text-white transition-colors"
             >
               Nos produits
