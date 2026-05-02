@@ -130,15 +130,16 @@ export default function Produits() {
   const ProductCard = ({ prod, i }: { prod: Product; i: number }) => (
     <motion.div
       key={i}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: i * 0.1 }}
-      whileHover={{ y: -4 }}
-      className="bg-white rounded-2xl overflow-hidden border border-[#7B1C1C]/10 cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+      transition={{ duration: 0.5, delay: i * 0.08 }}
+      whileHover={{ y: -6 }}
+      className="group bg-white rounded-3xl overflow-hidden cursor-pointer shadow-[0_2px_16px_rgba(123,28,28,0.06)] hover:shadow-[0_12px_40px_rgba(123,28,28,0.13)] transition-all duration-300"
     >
+      {/* Image */}
       <div
-        className="h-[160px] flex items-center justify-center text-[50px] relative overflow-hidden"
+        className="relative h-[210px] overflow-hidden"
         style={{ background: prod.bg }}
       >
         {prod.image ? (
@@ -146,32 +147,48 @@ export default function Produits() {
             src={prod.image}
             alt={prod.name}
             fill
-            className="object-cover"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
-          <span className="text-[50px]">{prod.emoji}</span>
+          <div className="w-full h-full flex items-center justify-center">
+            <span className="text-[64px] group-hover:scale-110 transition-transform duration-300">
+              {prod.emoji}
+            </span>
+          </div>
         )}
+        {/* gradient bas */}
+        <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/15 to-transparent" />
         {prod.badge && (
           <span
-            className="absolute top-2.5 right-2.5 text-white text-[9px] font-medium rounded-full px-2.5 py-1 tracking-wide z-10"
+            className="absolute top-3 left-3 text-white text-[10px] font-medium rounded-full px-3 py-1 tracking-wide z-10 backdrop-blur-sm"
             style={{ background: prod.badgeBg }}
           >
             {prod.badge}
           </span>
         )}
       </div>
-      <div className="p-4">
+
+      {/* Contenu */}
+      <div className="p-5">
         <div
           style={{ fontFamily: "var(--font-serif)" }}
-          className="text-[16px] text-[#7B1C1C] font-semibold mb-1"
+          className="text-[17px] text-[#7B1C1C] font-semibold leading-snug mb-1.5"
         >
           {prod.name}
         </div>
-        <div className="text-[11px] text-[#7a5a4a] leading-snug mb-3">
+        <p className="text-[12px] text-[#7a5a4a] leading-relaxed mb-4">
           {prod.desc}
-        </div>
-        <div className="text-[10px] text-[#5A8C1A] font-medium tracking-wide">
-          Format : {prod.volume}
+        </p>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5A8C1A] shrink-0" />
+            <span className="text-[11px] text-[#5A8C1A] font-medium tracking-wide">
+              {prod.volume}
+            </span>
+          </div>
+          <div className="w-7 h-7 rounded-full bg-[#F5F0E8] flex items-center justify-center text-[#7B1C1C] text-sm group-hover:bg-[#7B1C1C] group-hover:text-white transition-colors duration-200">
+            →
+          </div>
         </div>
       </div>
     </motion.div>
