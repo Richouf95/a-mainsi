@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -998,6 +999,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               whileHover={{ y: -4 }}
               className="bg-white rounded-[20px] overflow-hidden border border-[#7B1C1C]/8 cursor-pointer"
+              onClick={() => window.location.href = "/actualites/gitex-africa-2025"}
             >
               {/* Thumbnail avec image */}
               <div className="relative h-52 overflow-hidden">
@@ -1068,6 +1070,7 @@ export default function Home() {
             <div className="flex flex-col gap-6">
               {[
                 {
+                  slug: "lancement-hindirmou",
                   tag: "Produits",
                   tagBg: "#EAF3DE",
                   tagColor: "#3B6D11",
@@ -1076,6 +1079,7 @@ export default function Home() {
                   date: "28 fév. 2025",
                 },
                 {
+                  slug: "accord-eleveurs-dosso",
                   tag: "Partenariat",
                   tagBg: "#FFF0E0",
                   tagColor: "#854F0B",
@@ -1084,8 +1088,8 @@ export default function Home() {
                   date: "14 jan. 2025",
                 },
               ].map((news, i) => (
+                <Link key={i} href={`/actualites/${news.slug}`}>
                 <motion.div
-                  key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -1119,6 +1123,7 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
+                </Link>
               ))}
             </div>
           </div>
