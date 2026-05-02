@@ -2,132 +2,24 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { allProducts } from "./data";
+import type { Product } from "./data";
 
 export default function Produits() {
   const [open, setOpen] = useState(false);
 
   const products = {
-    laitFrais: [
-      {
-        name: "Lait entier",
-        desc: "Lait frais pasteurisé, riche en matières grasses",
-        volume: "1L, 500ml",
-        image: "/images/lait-frais-entier.png",
-        bg: "#F0F8FF",
-      },
-      {
-        name: "Lait demi-écrémé",
-        desc: "Lait frais pasteurisé, allégé en matières grasses",
-        volume: "1L, 500ml",
-        emoji: "🥛",
-        bg: "#F5FCFF",
-      },
-      {
-        name: "Lait caillé",
-        desc: "Lait fermenté naturellement, riche en probiotiques",
-        volume: "500ml, 250ml",
-        emoji: "🫙",
-        bg: "#FFF5F5",
-      },
-    ],
-    yaourts: [
-      {
-        name: "Yaourt nature",
-        desc: "Yaourt au lait local, doux et naturellement fermenté",
-        volume: "125g, 1kg",
-        image: "/images/yaourt-sucre.png",
-        bg: "#F0F8FF",
-        badge: "Phare",
-        badgeBg: "#E87020",
-      },
-      {
-        name: "Yaourt vanille",
-        desc: "Yaourt aromatisé à la vanille naturelle",
-        volume: "125g",
-        emoji: "🍦",
-        bg: "#FFFDF0",
-      },
-      {
-        name: "Yaourt mangue",
-        desc: "Yaourt aux fruits locaux, saveur mangue",
-        volume: "125g",
-        emoji: "🥭",
-        bg: "#FFF5E6",
-      },
-      {
-        name: "Yaourt bissap",
-        desc: "Yaourt à l'hibiscus, saveur traditionnelle",
-        volume: "125g",
-        emoji: "🌺",
-        bg: "#FFF0F5",
-      },
-    ],
-    fromages: [
-      {
-        name: "Tchoukou fin",
-        desc: "Fromage frais local au lait entier, texture crémeuse",
-        volume: "200g, 500g",
-        image: "/images/toukou-fin.png",
-        bg: "#FFF8F0",
-        badge: "Phare",
-        badgeBg: "#E87020",
-      },
-      {
-        name: "Fromage frais sucré",
-        desc: "Fromage frais doux et authentique au lait local",
-        volume: "150g",
-        image: "/images/fromage-frais-sucre.png",
-        bg: "#FFFDF0",
-      },
-      {
-        name: "Fromage à pâte molle",
-        desc: "Fromage affiné, saveur douce et fondante",
-        volume: "250g",
-        emoji: "🧀",
-        bg: "#FFF8F0",
-      },
-    ],
-    derives: [
-      {
-        name: "Hindirmou",
-        desc: "Beurre de lait traditionnel nigérien, riche et savoureux",
-        volume: "250g, 500g",
-        image: "/images/kindirmou.png",
-        bg: "#FFFDF0",
-        badge: "Nouveau",
-        badgeBg: "#5A8C1A",
-      },
-      {
-        name: "Crème fraîche",
-        desc: "Crème épaisse au lait local, idéale pour cuisiner",
-        volume: "200ml",
-        emoji: "🥄",
-        bg: "#FFF8F0",
-      },
-      {
-        name: "Beurre clarifié",
-        desc: "Beurre purifié traditionnel, longue conservation",
-        volume: "500g",
-        emoji: "🧈",
-        bg: "#FFF5E6",
-      },
-    ],
-  };
-
-  type Product = {
-    name: string;
-    desc: string;
-    volume: string;
-    image?: string;
-    emoji?: string;
-    bg: string;
-    badge?: string;
-    badgeBg?: string;
+    laitFrais: allProducts.filter((p) => p.categorySlug === "lait-frais"),
+    yaourts: allProducts.filter((p) => p.categorySlug === "yaourts"),
+    fromages: allProducts.filter((p) => p.categorySlug === "fromages"),
+    derives: allProducts.filter((p) => p.categorySlug === "derives"),
   };
 
   const ProductCard = ({ prod, i }: { prod: Product; i: number }) => (
+    <Link href={`/produits/${prod.slug}`} className="block">
     <motion.div
       key={i}
       initial={{ opacity: 0, y: 24 }}
@@ -192,6 +84,7 @@ export default function Produits() {
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 
   const SectionHeader = ({
