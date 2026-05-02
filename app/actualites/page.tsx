@@ -178,27 +178,6 @@ export default function ActualitesPage() {
         </section>
       )}
 
-      {/* ── FOOTER ────────────────────────────────────────────── */}
-      <footer className="bg-[#2C1A0E] py-10 px-8 md:px-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="relative w-16 h-11">
-            <Image src="/images/logo.jpg" alt="A'mansi" fill className="rounded-md object-cover" />
-          </div>
-          <p className="text-[12px] text-white/35 text-center">
-            © {new Date().getFullYear()} A&apos;mansi — Laiterie Fromagerie du Niger
-          </p>
-          <div className="flex gap-6">
-            {[
-              { label: "Produits", href: "/produits" },
-              { label: "Contact", href: "/contact" },
-            ].map((l) => (
-              <Link key={l.label} href={l.href} className="text-xs text-white/40 hover:text-white/70 transition-colors">
-                {l.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

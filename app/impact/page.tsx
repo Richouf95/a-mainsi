@@ -527,49 +527,6 @@ export default function ImpactPage() {
         </motion.div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#2C1A0E] py-9 px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-7">
-          <div>
-            <div style={{ fontFamily: "var(--font-serif)" }} className="text-xl text-white mb-2">A'mansi</div>
-            <p className="text-xs text-white/45 leading-relaxed">
-              Fromagerie nigérienne engagée dans la valorisation du lait local. Transformation, distribution et innovation numérique au service de la filière.
-            </p>
-          </div>
-          <div>
-            <div className="text-[11px] font-medium text-white/70 tracking-widest uppercase mb-3">Navigation</div>
-            <div className="flex flex-col gap-1.5">
-              {[
-                { label: "À propos", href: "/#apropos" },
-                { label: "Nos produits", href: "/produits" },
-                { label: "Proxilait", href: "/proxilait" },
-                { label: "Impact", href: "/impact" },
-              ].map((l) => (
-                <Link key={l.label} href={l.href} className="text-xs text-white/40 hover:text-white/70 transition-colors">{l.label}</Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="text-[11px] font-medium text-white/70 tracking-widest uppercase mb-3">Proxilait</div>
-            <div className="flex flex-col gap-1.5">
-              {["Éleveurs", "Transformateurs", "Distributeurs", "Consommateurs"].map((l) => (
-                <span key={l} className="text-xs text-white/40 hover:text-white/70 transition-colors cursor-pointer">{l}</span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="text-[11px] font-medium text-white/70 tracking-widest uppercase mb-3">Contact</div>
-            <div className="flex flex-col gap-1.5">
-              {["Niamey, Niger", "societeamansi@gmail.com", "+227 87 51 11 11", "Recrutement"].map((l) => (
-                <span key={l} className="text-xs text-white/40 hover:text-white/70 transition-colors cursor-pointer">{l}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-4 flex justify-center">
-          <span className="text-[11px] text-white/30">© 2025 A'mansi Fromagerie. Tous droits réservés.</span>
-        </div>
-      </footer>
     </div>
   );
 }
