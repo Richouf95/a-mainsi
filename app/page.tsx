@@ -64,6 +64,8 @@ export default function Home() {
           src="/images/a-mansi-hero.png"
           alt="Hero"
           fill
+          sizes="100vw"
+          priority
           className="object-cover object-[50%_70%]"
         />
 
@@ -79,7 +81,7 @@ export default function Home() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] mb-3">
             Le bon goût local
             <br />
-            <strong className="text-yellow-300 font-pumpkin">A'mansi</strong>
+            <strong className="text-yellow-300 font-pumpkin">A mansi</strong>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-white/80 mb-6 max-w-105">
@@ -126,6 +128,7 @@ export default function Home() {
                     src="/images/appstore.png"
                     alt="App Store"
                     fill
+                    sizes="120px"
                     className=""
                   />
                 </div>
@@ -145,6 +148,7 @@ export default function Home() {
                     src="/images/play-store.png"
                     alt="Google Play"
                     fill
+                    sizes="120px"
                     className="object-contain"
                   />
                 </div>
@@ -341,6 +345,7 @@ export default function Home() {
                       src={p.image}
                       alt={p.name}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
                       className="object-cover"
                     />
                     {p.badge && (
@@ -671,6 +676,7 @@ export default function Home() {
                     src="/images/phone.png"
                     alt="Application Proxilait"
                     fill
+                    sizes="(max-width: 1024px) 80vw, 40vw"
                     className="object-contain"
                     loading="lazy"
                   />
@@ -688,6 +694,7 @@ export default function Home() {
                       src="/images/qrcode_www.facebook.com.png"
                       alt="QR code Proxilait"
                       fill
+                      sizes="200px"
                       className="object-contain rounded-3xl"
                       loading="lazy"
                     />
@@ -910,6 +917,7 @@ export default function Home() {
                   src="/images/gitex.jpg"
                   alt="Participation de A'mansi à GITEX Africa"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
 

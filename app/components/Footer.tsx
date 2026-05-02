@@ -12,6 +12,7 @@ export default function Footer() {
               src="/images/logo.jpg"
               alt="A'mansi"
               fill
+              sizes="56px"
               className="rounded-md object-cover opacity-60"
             />
           </div>

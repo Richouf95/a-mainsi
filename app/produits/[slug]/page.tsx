@@ -40,6 +40,7 @@ export default function ProduitDetail({
               src={prod.image}
               alt=""
               fill
+              sizes="100vw"
               className="object-cover opacity-10 scale-110 blur-2xl"
             />
           </div>
@@ -58,6 +59,7 @@ export default function ProduitDetail({
                 src={prod.image}
                 alt={prod.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             ) : (
@@ -232,6 +234,7 @@ export default function ProduitDetail({
                           src={r.image}
                           alt={r.name}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 33vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       ) : (

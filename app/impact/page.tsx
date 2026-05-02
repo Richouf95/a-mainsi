@@ -131,7 +131,7 @@ export default function ImpactPage() {
       <section className="relative pt-14 min-h-[75dvh] bg-[#7B1C1C] overflow-hidden flex items-end">
         {/* Décor */}
         <div className="absolute inset-0 overflow-hidden">
-          <Image src="/images/a-mansi-hero.png" alt="" fill className="object-cover object-center opacity-15" />
+          <Image src="/images/a-mansi-hero.png" alt="" fill sizes="100vw" priority className="object-cover object-center opacity-15" />
         </div>
         <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[#E87020]/20 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#5A8C1A]/20 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/4" />

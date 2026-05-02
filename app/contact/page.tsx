@@ -92,7 +92,7 @@ export default function ContactPage() {
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative pt-14 h-[52dvh] bg-[#2C1A0E] overflow-hidden flex items-end">
         <div className="absolute inset-0">
-          <Image src="/images/a-mansi-hero.png" alt="" fill className="object-cover object-center opacity-20" />
+          <Image src="/images/a-mansi-hero.png" alt="" fill sizes="100vw" priority className="object-cover object-center opacity-20" />
         </div>
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#7B1C1C]/30 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#E87020]/20 rounded-full blur-[80px] translate-x-1/4 translate-y-1/4" />

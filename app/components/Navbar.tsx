@@ -32,6 +32,8 @@ export default function Navbar() {
               src="/images/logo.jpg"
               alt="A'mansi"
               fill
+              sizes="56px"
+              priority
               className="rounded-md object-cover"
             />
           </div>

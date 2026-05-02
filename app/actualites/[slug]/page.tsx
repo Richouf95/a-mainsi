@@ -35,6 +35,7 @@ export default function ArticleDetail({
               src={article.image}
               alt={article.title}
               fill
+              sizes="100vw"
               className="object-cover opacity-40"
             />
           </div>
@@ -261,6 +262,7 @@ export default function ArticleDetail({
                           src={a.image}
                           alt={a.title}
                           fill
+                          sizes="80px"
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                       ) : (

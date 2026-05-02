@@ -21,6 +21,8 @@ export default function ActualitesPage() {
             src="/images/a-mansi-hero.png"
             alt=""
             fill
+            sizes="100vw"
+            priority
             className="object-cover object-center opacity-20"
           />
         </div>
@@ -68,6 +70,7 @@ export default function ActualitesPage() {
                       src={featured.image}
                       alt={featured.title}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-600"
                     />
                   ) : (
@@ -142,6 +145,7 @@ export default function ActualitesPage() {
                           src={a.image}
                           alt={a.title}
                           fill
+                          sizes="80px"
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                       ) : (

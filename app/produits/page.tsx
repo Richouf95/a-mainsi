@@ -35,6 +35,7 @@ export default function Produits() {
             src={prod.image}
             alt={prod.name}
             fill
+            sizes="(max-width: 1024px) 100vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
@@ -124,6 +125,8 @@ export default function Produits() {
           src="/images/panier-table.png"
           alt=""
           fill
+          sizes="100vw"
+          priority
           className="object-cover object-center"
         />
 

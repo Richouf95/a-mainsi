@@ -62,7 +62,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="h-full">
-      <body className="min-h-full">
+      <body className="min-h-full" suppressHydrationWarning>
         <Navbar />
         {children}
         <Footer />

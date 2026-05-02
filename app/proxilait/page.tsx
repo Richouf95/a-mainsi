@@ -170,7 +170,7 @@ export default function ProxilaitPage() {
                 className="flex items-center gap-3 bg-white text-[#0B1F14] rounded-xl px-5 py-3 cursor-pointer shadow-lg"
               >
                 <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/appstore.png" alt="App Store" fill className="object-contain" />
+                  <Image src="/images/appstore.png" alt="App Store" fill sizes="120px" className="object-contain" />
                 </div>
                 <div className="flex flex-col leading-none">
                   <span className="text-[9px] text-black/50">Download on</span>
@@ -184,7 +184,7 @@ export default function ProxilaitPage() {
                 className="flex items-center gap-3 bg-white/10 border border-white/20 text-white rounded-xl px-5 py-3 cursor-pointer"
               >
                 <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/play-store.png" alt="Google Play" fill className="object-contain" />
+                  <Image src="/images/play-store.png" alt="Google Play" fill sizes="120px" className="object-contain" />
                 </div>
                 <div className="flex flex-col leading-none">
                   <span className="text-[9px] text-white/50">Get it on</span>
@@ -210,6 +210,7 @@ export default function ProxilaitPage() {
                 src="/images/phone.png"
                 alt="Application Proxilait"
                 fill
+                sizes="(max-width: 1024px) 80vw, 40vw"
                 className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]"
               />
             </motion.div>
@@ -403,7 +404,7 @@ export default function ProxilaitPage() {
                 className="flex items-center gap-3 bg-white text-[#0B1F14] rounded-xl px-5 py-3 cursor-pointer shadow-lg"
               >
                 <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/appstore.png" alt="App Store" fill className="object-contain" />
+                  <Image src="/images/appstore.png" alt="App Store" fill sizes="120px" className="object-contain" />
                 </div>
                 <div className="flex flex-col leading-none">
                   <span className="text-[9px] text-black/50">Download on</span>
@@ -417,7 +418,7 @@ export default function ProxilaitPage() {
                 className="flex items-center gap-3 bg-white/10 border border-white/20 text-white rounded-xl px-5 py-3 cursor-pointer"
               >
                 <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/play-store.png" alt="Google Play" fill className="object-contain" />
+                  <Image src="/images/play-store.png" alt="Google Play" fill sizes="120px" className="object-contain" />
                 </div>
                 <div className="flex flex-col leading-none">
                   <span className="text-[9px] text-white/50">Get it on</span>
@@ -445,6 +446,7 @@ export default function ProxilaitPage() {
                   src="/images/qrcode_www.facebook.com.png"
                   alt="QR code Proxilait"
                   fill
+                  sizes="200px"
                   className="object-contain rounded-2xl"
                 />
               </div>

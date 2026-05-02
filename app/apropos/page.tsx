@@ -79,6 +79,8 @@ export default function AProposPage() {
             src="/images/a-mansi-hero.png"
             alt=""
             fill
+            sizes="100vw"
+            priority
             className="object-cover object-[50%_40%] opacity-25"
           />
         </div>
@@ -151,6 +153,7 @@ export default function AProposPage() {
               src="/images/a-mansi-hero.png"
               alt="Atelier A'mansi"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-linear-to-t from-[#2C1A0E]/40 to-transparent" />
