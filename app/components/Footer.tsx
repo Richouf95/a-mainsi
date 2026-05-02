@@ -32,6 +32,7 @@ export default function Footer() {
               { label: "Accueil", href: "/" },
               { label: "Nos produits", href: "/produits" },
               { label: "Proxilait", href: "/proxilait" },
+              { label: "À propos", href: "/apropos" },
               { label: "Impact", href: "/impact" },
               { label: "Actualités", href: "/actualites" },
             ].map((l) => (
