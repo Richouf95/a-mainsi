@@ -4,12 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 const BAD_BOTS = [
   // Scrapers commerciaux
   "ahrefsbot", "semrushbot", "dotbot", "mj12bot", "blexbot", "majestic",
-  "rogerbot", "exabot", "gigabot", "seznambot", "yandexbot",
+  "rogerbot", "exabot", "gigabot", "seznambot",
   // Outils d'attaque
   "sqlmap", "nikto", "nmap", "masscan", "zgrab", "nuclei",
   // Clients HTTP bruts souvent utilisés pour le scraping/attaques
   "python-requests", "python-urllib", "go-http-client", "java/",
-  "libwww-perl", "lwp-trivial", "curl/", "wget/",
+  "libwww-perl", "lwp-trivial",
 ];
 
 // ── Chemins d'exploitation courants ─────────────────────────────────────────
@@ -40,15 +40,19 @@ export function proxy(request: NextRequest) {
     return new NextResponse("Not Found", { status: 404 });
   }
 
-  // 4. Bloquer les tentatives d'injection dans l'URL
+  // 4. Bloquer les tentatives d'injection dans l'URL (encodées et brutes)
   const rawUrl = request.url;
+  const decodedUrl = (() => {
+    try { return decodeURIComponent(rawUrl); } catch { return rawUrl; }
+  })();
+  const urlToCheck = rawUrl + " " + decodedUrl;
   if (
-    rawUrl.includes("../") ||
-    rawUrl.includes("<script") ||
-    rawUrl.includes("SELECT%20") ||
-    rawUrl.includes("UNION%20") ||
-    rawUrl.includes("eval(") ||
-    rawUrl.includes("base64_decode")
+    urlToCheck.includes("../") ||
+    urlToCheck.includes("<script") ||
+    /SELECT\s/i.test(urlToCheck) ||
+    /UNION\s/i.test(urlToCheck) ||
+    urlToCheck.includes("eval(") ||
+    urlToCheck.includes("base64_decode")
   ) {
     return new NextResponse("Bad Request", { status: 400 });
   }
