@@ -1,9 +1,33 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CTABanner from "@/app/components/ui/CTABanner";
 import ProductHero from "@/app/components/produits/ProductHero";
 import ProductHighlights from "@/app/components/produits/ProductHighlights";
 import RelatedProducts from "@/app/components/produits/RelatedProducts";
 import { allProducts } from "../data";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const prod = allProducts.find((p) => p.slug === slug);
+  if (!prod) return {};
+
+  return {
+    title: prod.name,
+    description: `${prod.desc} — ${prod.volume}. Produit artisanal A'mansi fabriqué à Niamey avec du lait local nigérien.`,
+    openGraph: {
+      title: `${prod.name} — A'mansi`,
+      description: prod.desc,
+      url: `https://amansi.ne/produits/${prod.slug}`,
+      ...(prod.image && {
+        images: [{ url: prod.image, alt: prod.name }],
+      }),
+    },
+  };
+}
 
 export default async function ProduitDetail({
   params,

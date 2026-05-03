@@ -1,4 +1,15 @@
+import type { Metadata } from "next";
 import CTABanner from "@/app/components/ui/CTABanner";
+
+export const metadata: Metadata = {
+  title: "Nos produits",
+  description: "Découvrez la gamme complète de produits laitiers A'mansi : lait frais, yaourts, Tchoukou, Hindirmou, beurre clarifié. Fabriqués artisanalement à Niamey depuis du lait local nigérien.",
+  openGraph: {
+    title: "Nos produits laitiers — A'mansi",
+    description: "Lait frais, yaourts, Tchoukou, Hindirmou et plus. Des produits artisanaux nigériens fabriqués avec du lait local de qualité.",
+    url: "https://amansi.ne/produits",
+  },
+};
 import HeroSection from "@/app/components/produits/HeroSection";
 import CategoriesNav from "@/app/components/produits/CategoriesNav";
 import ProductGrid from "@/app/components/produits/ProductGrid";

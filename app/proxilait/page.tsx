@@ -1,4 +1,15 @@
+import type { Metadata } from "next";
 import CTABanner from "@/app/components/ui/CTABanner";
+
+export const metadata: Metadata = {
+  title: "Proxilait",
+  description: "Proxilait est l'application mobile d'A'mansi qui connecte éleveurs, transformateurs, distributeurs et consommateurs sur une seule plateforme numérique pour la filière laitière nigérienne.",
+  openGraph: {
+    title: "Proxilait — La filière laitière connectée",
+    description: "Une application, quatre acteurs. Proxilait digitalise la chaîne de valeur du lait nigérien pour plus de transparence et d'efficacité.",
+    url: "https://amansi.ne/proxilait",
+  },
+};
 import HeroSection from "@/app/components/proxilait/HeroSection";
 import RolesSection from "@/app/components/proxilait/RolesSection";
 import FeaturesSection from "@/app/components/proxilait/FeaturesSection";
