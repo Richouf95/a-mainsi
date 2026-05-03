@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 w-125 h-125 bg-[#5A8C1A]/15 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/3" />
       <div className="absolute bottom-0 right-0 w-100 h-100 bg-[#C9A227]/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
 
-      <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12 px-8 md:px-12 py-16">
+      <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-2 md:gap-12 px-8 md:px-12 py-16 pt-0 md:pt-16">
         {/* Texte */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,7 +60,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-56 h-120 md:w-64 md:h-137.5"
+            className="relative w-72 h-120 md:w-96 md:h-137.5"
           >
             <Image
               src="/images/phone.png"

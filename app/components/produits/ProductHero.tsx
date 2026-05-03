@@ -92,14 +92,14 @@ export default function ProductHero({ prod }: { prod: Product }) {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-[#7B1C1C] text-white rounded-xl px-6 py-3 text-[13px] font-medium cursor-pointer hover:bg-[#6a1717] transition-colors"
+              className="w-full md:w-52 bg-[#7B1C1C] text-white rounded-xl px-6 py-3 text-[13px] font-medium cursor-pointer hover:bg-[#6a1717] transition-colors"
             >
               Commander
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-transparent text-[#7B1C1C] border border-[#7B1C1C]/30 rounded-xl px-6 py-3 text-[13px] font-medium cursor-pointer hover:bg-[#7B1C1C]/5 transition-colors"
+              className="w-full md:w-52 bg-transparent text-[#7B1C1C] border border-[#7B1C1C]/30 rounded-xl px-6 py-3 text-[13px] font-medium cursor-pointer hover:bg-[#7B1C1C]/5 transition-colors"
             >
               Trouver un point de vente
             </motion.button>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const products = [
   {
@@ -166,12 +167,12 @@ export default function ProductsSection() {
       </p>
 
       <div className="flex justify-center mt-6">
-        <a
+        <Link
           href="/produits"
           className="bg-[#7B1C1C] text-white px-6 py-3 rounded-lg text-[13px] font-medium hover:bg-[#6a1717] transition-colors"
         >
           Voir tous les produits
-        </a>
+        </Link>
       </div>
     </section>
   );

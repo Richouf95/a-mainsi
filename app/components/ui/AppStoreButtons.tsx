@@ -10,12 +10,12 @@ type AppStoreButtonsProps = {
 
 export default function AppStoreButtons({ dark = false }: AppStoreButtonsProps) {
   return (
-    <div className="flex gap-3 flex-wrap">
+    <div className="flex gap-3 flex-wrap items-center justify-center">
       {/* App Store */}
       <motion.div
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className={`flex items-center gap-3 rounded-xl px-5 py-3 cursor-pointer shadow-lg ${
+        className={`flex items-center min-w-52 gap-3 rounded-xl px-5 py-3 cursor-pointer shadow-lg ${
           dark ? "bg-white text-[#0B1F14]" : "bg-[#0B1F14] text-white"
         }`}
       >
@@ -40,7 +40,7 @@ export default function AppStoreButtons({ dark = false }: AppStoreButtonsProps) 
       <motion.div
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className={`flex items-center gap-3 rounded-xl px-5 py-3 cursor-pointer ${
+        className={`flex items-center min-w-52 gap-3 rounded-xl px-5 py-3 cursor-pointer ${
           dark
             ? "bg-white/10 border border-white/20 text-white"
             : "bg-white/10 border border-[#0B1F14]/20 text-[#0B1F14]"

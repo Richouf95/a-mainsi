@@ -126,14 +126,6 @@ export default function RolesSection() {
                 {r.headline}
               </h3>
               <p className="text-[14px] text-[#5a3a2a] leading-relaxed mb-6">{r.desc}</p>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="text-white rounded-xl px-6 py-3 text-[13px] font-medium cursor-pointer"
-                style={{ background: r.color }}
-              >
-                Télécharger Proxilait
-              </motion.button>
             </div>
 
             <div className="flex flex-col gap-3">
