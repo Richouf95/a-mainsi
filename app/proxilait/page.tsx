@@ -2,8 +2,9 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
+import AppStoreButtons from "@/app/components/ui/AppStoreButtons";
+import CTABanner from "@/app/components/ui/CTABanner";
 
 const roles = [
   {
@@ -111,13 +112,12 @@ export default function ProxilaitPage() {
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative pt-14 min-h-[96dvh] bg-[#0B1F14] overflow-hidden flex items-center">
         {/* Décor fond */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#5A8C1A]/15 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/3" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C9A227]/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-0 left-0 w-125 h-125 bg-[#5A8C1A]/15 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/3" />
+        <div className="absolute bottom-0 right-0 w-100 h-100 bg-[#C9A227]/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
 
         <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12 px-8 md:px-12 py-16">
           {/* Texte */}
@@ -133,8 +133,7 @@ export default function ProxilaitPage() {
             </span>
 
             <h1
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[44px] md:text-[58px] text-white leading-[1.1] mb-5"
+              className="font-serif text-[44px] md:text-[58px] text-white leading-[1.1] mb-5"
             >
               La filière laitière{" "}
               <em className="text-[#FAD060] not-italic">connectée</em>,{" "}
@@ -163,35 +162,7 @@ export default function ProxilaitPage() {
             </div>
 
             {/* Boutons téléchargement */}
-            <div className="flex gap-3 flex-wrap">
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-3 bg-white text-[#0B1F14] rounded-xl px-5 py-3 cursor-pointer shadow-lg"
-              >
-                <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/appstore.png" alt="App Store" fill sizes="120px" className="object-contain" />
-                </div>
-                <div className="flex flex-col leading-none">
-                  <span className="text-[9px] text-black/50">Download on</span>
-                  <span className="text-[13px] font-semibold">App Store</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-3 bg-white/10 border border-white/20 text-white rounded-xl px-5 py-3 cursor-pointer"
-              >
-                <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/play-store.png" alt="Google Play" fill sizes="120px" className="object-contain" />
-                </div>
-                <div className="flex flex-col leading-none">
-                  <span className="text-[9px] text-white/50">Get it on</span>
-                  <span className="text-[13px] font-semibold">Google Play</span>
-                </div>
-              </motion.div>
-            </div>
+            <AppStoreButtons dark />
           </motion.div>
 
           {/* Téléphone */}
@@ -204,7 +175,7 @@ export default function ProxilaitPage() {
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-56 h-[480px] md:w-64 md:h-[550px]"
+              className="relative w-56 h-120 md:w-64 md:h-137.5"
             >
               <Image
                 src="/images/phone.png"
@@ -234,8 +205,7 @@ export default function ProxilaitPage() {
             Conçu pour toute la filière
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Une plateforme, quatre acteurs
           </h2>
@@ -277,8 +247,7 @@ export default function ProxilaitPage() {
               <div>
                 <div className="text-4xl mb-4">{r.emoji}</div>
                 <h3
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="text-[26px] text-[#2C1A0E] mb-3 leading-snug"
+                  className="font-serif text-[26px] text-[#2C1A0E] mb-3 leading-snug"
                 >
                   {r.headline}
                 </h3>
@@ -335,8 +304,7 @@ export default function ProxilaitPage() {
             Ce que Proxilait offre
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Tout ce dont la filière a besoin
           </h2>
@@ -356,7 +324,7 @@ export default function ProxilaitPage() {
                 {f.icon}
               </div>
               <div className="flex-1 min-w-0">
-                <h3 style={{ fontFamily: "var(--font-serif)" }} className="text-[18px] text-[#7B1C1C] mb-1">
+                <h3 className="font-serif text-[18px] text-[#7B1C1C] mb-1">
                   {f.title}
                 </h3>
                 <p className="text-[13px] text-[#7a5a4a] leading-relaxed">{f.desc}</p>
@@ -387,8 +355,7 @@ export default function ProxilaitPage() {
               Disponible maintenant
             </div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[32px] md:text-[42px] text-white leading-[1.15] mb-4"
+              className="font-serif text-[32px] md:text-[42px] text-white leading-[1.15] mb-4"
             >
               Rejoignez la filière <br />
               <em className="text-[#FAD060] not-italic">intelligente</em>
@@ -397,34 +364,8 @@ export default function ProxilaitPage() {
               Téléchargez Proxilait gratuitement, créez votre profil selon votre rôle et commencez à transformer votre quotidien dans la filière laitière nigérienne.
             </p>
 
-            <div className="flex gap-3 flex-wrap mb-8">
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-3 bg-white text-[#0B1F14] rounded-xl px-5 py-3 cursor-pointer shadow-lg"
-              >
-                <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/appstore.png" alt="App Store" fill sizes="120px" className="object-contain" />
-                </div>
-                <div className="flex flex-col leading-none">
-                  <span className="text-[9px] text-black/50">Download on</span>
-                  <span className="text-[13px] font-semibold">App Store</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-3 bg-white/10 border border-white/20 text-white rounded-xl px-5 py-3 cursor-pointer"
-              >
-                <div className="relative w-6 h-6 shrink-0">
-                  <Image src="/images/play-store.png" alt="Google Play" fill sizes="120px" className="object-contain" />
-                </div>
-                <div className="flex flex-col leading-none">
-                  <span className="text-[9px] text-white/50">Get it on</span>
-                  <span className="text-[13px] font-semibold">Google Play</span>
-                </div>
-              </motion.div>
+            <div className="mb-8">
+              <AppStoreButtons dark />
             </div>
 
             <p className="text-[12px] text-white/30">
@@ -462,48 +403,14 @@ export default function ProxilaitPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="bg-[#E87020] py-12 px-8 md:px-12 flex items-center justify-between gap-8 flex-col md:flex-row">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-white mb-2"
-          >
-            Des questions sur Proxilait ?
-          </h2>
-          <p className="text-[14px] text-white/80">
-            Notre équipe est disponible pour vous accompagner dans votre intégration à la plateforme.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 w-full md:w-auto"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-52 bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-          >
-            Nous contacter
-          </motion.button>
-          <Link href="/produits">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-52 bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-            >
-              Voir nos produits
-            </motion.button>
-          </Link>
-        </motion.div>
-      </section>
+      <CTABanner
+        title="Des questions sur Proxilait ?"
+        subtitle="Notre équipe est disponible pour vous accompagner dans votre intégration à la plateforme."
+        buttons={[
+          { label: "Nous contacter", href: "/contact", variant: "primary" },
+          { label: "Voir nos produits", href: "/produits", variant: "outline" },
+        ]}
+      />
 
     </div>
   );

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import CTABanner from "@/app/components/ui/CTABanner";
 
 // ── Données ────────────────────────────────────────────────────────────────
 
@@ -125,7 +126,6 @@ export default function ImpactPage() {
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative pt-14 min-h-[75dvh] bg-[#7B1C1C] overflow-hidden flex items-end">
@@ -149,8 +149,7 @@ export default function ImpactPage() {
             </span>
 
             <h1
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[46px] md:text-[62px] text-white leading-[1.08] mb-5"
+              className="font-serif text-[46px] md:text-[62px] text-white leading-[1.08] mb-5"
             >
               Un impact réel,{" "}
               <em className="text-[#FAD060] not-italic">mesurable</em>
@@ -200,8 +199,7 @@ export default function ImpactPage() {
             Notre action
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Quatre axes d'impact
           </h2>
@@ -242,8 +240,7 @@ export default function ImpactPage() {
               <div>
                 <div className="text-4xl mb-4">{a.emoji}</div>
                 <h3
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="text-[26px] text-[#2C1A0E] mb-3 leading-snug"
+                  className="font-serif text-[26px] text-[#2C1A0E] mb-3 leading-snug"
                 >
                   {a.title}
                 </h3>
@@ -291,8 +288,7 @@ export default function ImpactPage() {
             Nos ambitions
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Objectifs 2025 — 2026
           </h2>
@@ -372,8 +368,7 @@ export default function ImpactPage() {
             Ils témoignent
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             L'impact vu du terrain
           </h2>
@@ -399,8 +394,7 @@ export default function ImpactPage() {
               </div>
 
               <p
-                style={{ fontFamily: "var(--font-serif)" }}
-                className="text-[15px] text-[#2C1A0E] leading-relaxed italic flex-1"
+                className="font-serif text-[15px] text-[#2C1A0E] leading-relaxed italic flex-1"
               >
                 "{t.text}"
               </p>
@@ -435,8 +429,7 @@ export default function ImpactPage() {
               Transparence & redevabilité
             </div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[28px] md:text-[34px] text-white leading-snug mb-4"
+              className="font-serif text-[28px] md:text-[34px] text-white leading-snug mb-4"
             >
               Nous rendons compte à nos partenaires
             </h2>
@@ -483,49 +476,14 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="bg-[#E87020] py-12 px-8 md:px-12 flex items-center justify-between gap-8 flex-col md:flex-row">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-white mb-2"
-          >
-            Rejoignez le mouvement
-          </h2>
-          <p className="text-[14px] text-white/80">
-            Éleveur, partenaire ou investisseur — construisons ensemble une filière laitière digne du Niger.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 w-full md:w-auto"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-52 bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-          >
-            Nous contacter
-          </motion.button>
-          <Link href="/proxilait">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-52 bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-            >
-              Découvrir Proxilait
-            </motion.button>
-          </Link>
-        </motion.div>
-      </section>
+      <CTABanner
+        title="Rejoignez le mouvement"
+        subtitle="Éleveur, partenaire ou investisseur — construisons ensemble une filière laitière digne du Niger."
+        buttons={[
+          { label: "Nous contacter", href: "/contact", variant: "primary" },
+          { label: "Découvrir Proxilait", href: "/proxilait", variant: "outline" },
+        ]}
+      />
 
     </div>
   );

@@ -82,6 +82,10 @@
   .font-pumpkin {
     font-family: "Pumpkin Story";
   }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
 }
 
 @keyframes marquee {

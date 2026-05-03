@@ -12,7 +12,6 @@ export default function ActualitesPage() {
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative pt-14 h-[44dvh] bg-[#2C1A0E] overflow-hidden flex items-end">
@@ -39,8 +38,7 @@ export default function ActualitesPage() {
             Actualités
           </span>
           <h1
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[38px] md:text-[54px] text-white leading-[1.1]"
+            className="font-serif text-[38px] md:text-[54px] text-white leading-[1.1]"
           >
             Dernières nouvelles
             <br />
@@ -91,8 +89,7 @@ export default function ActualitesPage() {
                       {featured.tag}
                     </span>
                     <h2
-                      style={{ fontFamily: "var(--font-serif)" }}
-                      className="text-[22px] md:text-[26px] text-[#2C1A0E] leading-snug mb-4"
+                      className="font-serif text-[22px] md:text-[26px] text-[#2C1A0E] leading-snug mb-4"
                     >
                       {featured.title}
                     </h2>
@@ -162,8 +159,7 @@ export default function ActualitesPage() {
                         {a.tag}
                       </span>
                       <h3
-                        style={{ fontFamily: "var(--font-serif)" }}
-                        className="text-[14px] leading-snug text-[#2C1A0E] mb-1.5 line-clamp-2"
+                        className="font-serif text-[14px] leading-snug text-[#2C1A0E] mb-1.5 line-clamp-2"
                       >
                         {a.title}
                       </h3>

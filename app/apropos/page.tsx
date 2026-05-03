@@ -70,7 +70,6 @@ export default function AProposPage() {
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative pt-14 min-h-[80dvh] bg-[#2C1A0E] overflow-hidden flex items-end">
@@ -98,8 +97,7 @@ export default function AProposPage() {
             Notre histoire
           </span>
           <h1
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[42px] md:text-[58px] text-white leading-[1.08] mb-6"
+            className="font-serif text-[42px] md:text-[58px] text-white leading-[1.08] mb-6"
           >
             Nés au Niger,
             <br />
@@ -124,8 +122,7 @@ export default function AProposPage() {
               Nos origines
             </div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug mb-6"
+              className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug mb-6"
             >
               D'une frustration naît une entreprise
             </h2>
@@ -160,8 +157,7 @@ export default function AProposPage() {
             <div className="absolute bottom-6 left-6 right-6">
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-4">
                 <p
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="text-[14px] text-white italic leading-snug"
+                  className="font-serif text-[14px] text-white italic leading-snug"
                 >
                   "Le bon goût local" — pas un slogan. Une ligne de conduite.
                 </p>
@@ -184,8 +180,7 @@ export default function AProposPage() {
             Notre boussole
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Mission & Vision
           </h2>
@@ -203,8 +198,7 @@ export default function AProposPage() {
               Mission
             </div>
             <p
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[22px] text-white leading-[1.5]"
+              className="font-serif text-[22px] text-white leading-[1.5]"
             >
               Transformer le lait local nigérien en produits de qualité, valoriser le travail des éleveurs, et rendre la filière laitière plus équitable, traçable et durable.
             </p>
@@ -221,8 +215,7 @@ export default function AProposPage() {
               Vision
             </div>
             <p
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[22px] text-white leading-[1.5]"
+              className="font-serif text-[22px] text-white leading-[1.5]"
             >
               Devenir la référence de la transformation laitière en Afrique de l'Ouest — en prouvant qu'une filière locale, numérisée et respectueuse peut rivaliser avec les importations.
             </p>
@@ -243,8 +236,7 @@ export default function AProposPage() {
             Ce qui nous guide
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Nos valeurs
           </h2>
@@ -263,8 +255,8 @@ export default function AProposPage() {
             >
               <span className="text-3xl mb-4 block">{v.icon}</span>
               <h3
-                style={{ fontFamily: "var(--font-serif)", color: v.color }}
-                className="text-[20px] mb-2"
+                style={{ color: v.color }}
+                className="font-serif text-[20px] mb-2"
               >
                 {v.title}
               </h3>
@@ -287,8 +279,7 @@ export default function AProposPage() {
             Comment ça marche
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Notre modèle de bout en bout
           </h2>
@@ -310,8 +301,7 @@ export default function AProposPage() {
                 </div>
                 <div>
                   <div
-                    style={{ fontFamily: "var(--font-serif)" }}
-                    className="text-[15px] text-[#7B1C1C] font-medium mb-1"
+                    className="font-serif text-[15px] text-[#7B1C1C] font-medium mb-1"
                   >
                     {m.label}
                   </div>
@@ -358,8 +348,7 @@ export default function AProposPage() {
             Les personnes
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
+            className="font-serif text-[30px] md:text-[36px] text-[#7B1C1C] leading-snug"
           >
             Ceux qui font A'mansi
           </h2>
@@ -382,8 +371,7 @@ export default function AProposPage() {
                 {e.initiale}
               </div>
               <div
-                style={{ fontFamily: "var(--font-serif)" }}
-                className="text-[17px] text-[#2C1A0E] mb-1"
+                className="font-serif text-[17px] text-[#2C1A0E] mb-1"
               >
                 {e.nom}
               </div>
@@ -405,8 +393,7 @@ export default function AProposPage() {
           transition={{ duration: 0.6 }}
         >
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-white mb-2"
+            className="font-serif text-[28px] text-white mb-2"
           >
             Rejoindre l'aventure A'mansi
           </h2>

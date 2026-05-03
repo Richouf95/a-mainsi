@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import CTABanner from "@/app/components/ui/CTABanner";
 import { allProducts } from "./data";
 import type { Product } from "./data";
 
@@ -27,7 +28,7 @@ export default function Produits() {
     >
       {/* Image */}
       <div
-        className="relative h-[210px] overflow-hidden"
+        className="relative h-52.5 overflow-hidden"
         style={{ background: prod.bg }}
       >
         {prod.image ? (
@@ -46,7 +47,7 @@ export default function Produits() {
           </div>
         )}
         {/* gradient bas */}
-        <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/15 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-14 bg-linear-to-t from-black/15 to-transparent" />
         {prod.badge && (
           <span
             className="absolute top-3 left-3 text-white text-[10px] font-medium rounded-full px-3 py-1 tracking-wide z-10 backdrop-blur-sm"
@@ -60,8 +61,7 @@ export default function Produits() {
       {/* Contenu */}
       <div className="p-5">
         <div
-          style={{ fontFamily: "var(--font-serif)" }}
-          className="text-[17px] text-[#7B1C1C] font-semibold leading-snug mb-1.5"
+          className="font-serif text-[17px] text-[#7B1C1C] font-semibold leading-snug mb-1.5"
         >
           {prod.name}
         </div>
@@ -104,8 +104,7 @@ export default function Produits() {
         {tag}
       </div>
       <h2
-        style={{ fontFamily: "var(--font-serif)" }}
-        className="text-[28px] text-[#7B1C1C] leading-tight"
+        className="font-serif text-[28px] text-[#7B1C1C] leading-tight"
       >
         {title}
       </h2>
@@ -116,7 +115,6 @@ export default function Produits() {
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* Hero */}
       <section className="relative max-h-260 h-[calc(100dvh-0px)] flex items-end overflow-hidden">
@@ -135,20 +133,19 @@ export default function Produits() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-[2] px-8 md:px-10 pb-12 max-w-7xl mx-auto w-full"
+          className="relative z-2 px-8 md:px-10 pb-12 max-w-7xl mx-auto w-full"
         >
           <div className="backdrop-blur-md bg-black/25 border border-white/10 rounded-2xl p-6 max-w-lg">
             <span className="inline-block bg-white/15 border border-white/30 text-white/90 text-[10px] font-medium tracking-[0.12em] uppercase rounded-full px-3.5 py-1 mb-4">
               Catalogue complet
             </span>
             <h1
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[38px] md:text-[48px] font-semibold text-white leading-[1.15] mb-3"
+              className="font-serif text-[38px] md:text-[48px] font-semibold text-white leading-[1.15] mb-3"
             >
               Nos <em className="text-[#FAD060] not-italic">produits</em>{" "}
               laitiers
             </h1>
-            <p className="text-[14px] text-white/75 leading-relaxed max-w-[480px]">
+            <p className="text-[14px] text-white/75 leading-relaxed max-w-120">
               Découvrez toute notre gamme de produits laitiers authentiques,
               fabriqués à partir du lait local nigérien de qualité supérieure.
             </p>
@@ -263,8 +260,7 @@ export default function Produits() {
             Notre engagement qualité
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] md:text-[32px] text-white"
+            className="font-serif text-[28px] md:text-[32px] text-white"
           >
             Du lait à votre table : un processus maîtrisé
           </h2>
@@ -308,14 +304,12 @@ export default function Produits() {
                 {step.emoji}
               </div>
               <div
-                style={{ fontFamily: "var(--font-serif)" }}
-                className="text-[#FAD060] text-[11px] font-medium tracking-[0.12em] mb-1"
+                className="font-serif text-[#FAD060] text-[11px] font-medium tracking-[0.12em] mb-1"
               >
                 {step.num}
               </div>
               <div
-                style={{ fontFamily: "var(--font-serif)" }}
-                className="text-white text-[17px] mb-2"
+                className="font-serif text-white text-[17px] mb-2"
               >
                 {step.title}
               </div>
@@ -340,8 +334,7 @@ export default function Produits() {
             Points de vente
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-[#7B1C1C] mb-4"
+            className="font-serif text-[28px] text-[#7B1C1C] mb-4"
           >
             Où trouver nos produits
           </h2>
@@ -380,8 +373,7 @@ export default function Produits() {
             >
               <div className="text-4xl mb-3">{loc.icon}</div>
               <div
-                style={{ fontFamily: "var(--font-serif)" }}
-                className="text-[18px] text-[#7B1C1C] font-semibold mb-2"
+                className="font-serif text-[18px] text-[#7B1C1C] font-semibold mb-2"
               >
                 {loc.title}
               </div>
@@ -393,51 +385,14 @@ export default function Produits() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        id="contact"
-        className="bg-[#E87020] py-12 px-8 md:px-10 flex items-center justify-between gap-8 flex-col md:flex-row"
-      >
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-white mb-2"
-          >
-            Envie de goûter nos produits ?
-          </h2>
-          <p className="text-[14px] text-white/80">
-            Contactez-nous pour passer commande ou trouver le point de vente le
-            plus proche.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 w-full md:w-auto"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-52 bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-          >
-            Nous contacter
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-52 bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-          >
-            Trouver un point de vente
-          </motion.button>
-        </motion.div>
-      </section>
+      <CTABanner
+        title="Envie de goûter nos produits ?"
+        subtitle="Contactez-nous pour passer commande ou trouver le point de vente le plus proche."
+        buttons={[
+          { label: "Nous contacter", href: "/contact", variant: "primary" },
+          { label: "Trouver un point de vente", href: "/contact", variant: "outline" },
+        ]}
+      />
 
     </div>
   );

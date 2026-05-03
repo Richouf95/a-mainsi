@@ -87,7 +87,6 @@ export default function ContactPage() {
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative pt-14 h-[52dvh] bg-[#2C1A0E] overflow-hidden flex items-end">
@@ -108,8 +107,7 @@ export default function ContactPage() {
             On vous répond sous 24h
           </span>
           <h1
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[44px] md:text-[58px] text-white leading-[1.08]"
+            className="font-serif text-[44px] md:text-[58px] text-white leading-[1.08]"
           >
             Votre voix compte,{" "}
             <em className="text-[#FAD060] not-italic">parlez-nous</em>
@@ -140,8 +138,7 @@ export default function ContactPage() {
                   ✅
                 </div>
                 <h3
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="text-[26px] text-[#7B1C1C]"
+                  className="font-serif text-[26px] text-[#7B1C1C]"
                 >
                   Message envoyé !
                 </h3>
@@ -162,8 +159,7 @@ export default function ContactPage() {
                     Formulaire de contact
                   </div>
                   <h2
-                    style={{ fontFamily: "var(--font-serif)" }}
-                    className="text-[28px] text-[#7B1C1C]"
+                    className="font-serif text-[28px] text-[#7B1C1C]"
                   >
                     Envoyez-nous un message
                   </h2>
@@ -325,8 +321,7 @@ export default function ContactPage() {
             Où nous trouver
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-[#7B1C1C] mb-4"
+            className="font-serif text-[28px] text-[#7B1C1C] mb-4"
           >
             Nos points de vente à Niamey
           </h2>

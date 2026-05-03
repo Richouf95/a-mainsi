@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CTABanner from "@/app/components/ui/CTABanner";
 
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { articles } from "../data";
@@ -24,7 +25,6 @@ export default function ArticleDetail({
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative pt-14 min-h-[70dvh] flex items-end overflow-hidden bg-[#2C1A0E]">
@@ -78,8 +78,7 @@ export default function ArticleDetail({
 
           {/* Titre */}
           <h1
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[32px] md:text-[46px] text-white leading-[1.12] max-w-3xl"
+            className="font-serif text-[32px] md:text-[46px] text-white leading-[1.12] max-w-3xl"
           >
             {article.title}
           </h1>
@@ -100,8 +99,7 @@ export default function ArticleDetail({
           >
             {/* Lead */}
             <p
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[18px] text-[#2C1A0E] leading-[1.8] mb-8 border-l-2 border-[#7B1C1C]/20 pl-5"
+              className="font-serif text-[18px] text-[#2C1A0E] leading-[1.8] mb-8 border-l-2 border-[#7B1C1C]/20 pl-5"
             >
               {article.body.lead}
             </p>
@@ -118,8 +116,7 @@ export default function ArticleDetail({
                 >
                   {s.subtitle && (
                     <h2
-                      style={{ fontFamily: "var(--font-serif)" }}
-                      className="text-[20px] text-[#7B1C1C] mb-3 leading-snug"
+                      className="font-serif text-[20px] text-[#7B1C1C] mb-3 leading-snug"
                     >
                       {s.subtitle}
                     </h2>
@@ -141,14 +138,12 @@ export default function ArticleDetail({
                 className="my-10 bg-[#F5F0E8] rounded-3xl px-8 py-7 relative overflow-hidden"
               >
                 <span
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="absolute -top-2 left-5 text-[80px] text-[#7B1C1C]/8 leading-none select-none"
+                  className="font-serif absolute -top-2 left-5 text-[80px] text-[#7B1C1C]/8 leading-none select-none"
                 >
                   "
                 </span>
                 <p
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="text-[17px] text-[#2C1A0E] leading-relaxed italic relative z-10 mb-3"
+                  className="font-serif text-[17px] text-[#2C1A0E] leading-relaxed italic relative z-10 mb-3"
                 >
                   "{article.body.quote.text}"
                 </p>
@@ -237,8 +232,7 @@ export default function ArticleDetail({
               Continuer à lire
             </div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[26px] text-[#7B1C1C]"
+              className="font-serif text-[26px] text-[#7B1C1C]"
             >
               Autres actualités
             </h2>
@@ -281,8 +275,7 @@ export default function ArticleDetail({
                         {a.tag}
                       </span>
                       <h3
-                        style={{ fontFamily: "var(--font-serif)" }}
-                        className="text-[14px] leading-snug text-[#2C1A0E] mb-1.5 line-clamp-2"
+                        className="font-serif text-[14px] leading-snug text-[#2C1A0E] mb-1.5 line-clamp-2"
                       >
                         {a.title}
                       </h3>
@@ -301,48 +294,14 @@ export default function ArticleDetail({
         </section>
       )}
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="bg-[#E87020] py-12 px-8 md:px-12 flex items-center justify-between gap-8 flex-col md:flex-row">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 style={{ fontFamily: "var(--font-serif)" }} className="text-[28px] text-white mb-2">
-            Envie d'en savoir plus ?
-          </h2>
-          <p className="text-[14px] text-white/80">
-            Suivez l'actualité d'A'mansi et rejoignez la filière laitière nigérienne.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 w-full md:w-auto"
-        >
-          <Link href="/contact">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-52 bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-            >
-              Nous contacter
-            </motion.button>
-          </Link>
-          <Link href="/proxilait">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-52 bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-            >
-              Découvrir Proxilait
-            </motion.button>
-          </Link>
-        </motion.div>
-      </section>
+      <CTABanner
+        title="Envie d'en savoir plus ?"
+        subtitle="Suivez l'actualité d'A'mansi et rejoignez la filière laitière nigérienne."
+        buttons={[
+          { label: "Nous contacter", href: "/contact", variant: "primary" },
+          { label: "Découvrir Proxilait", href: "/proxilait", variant: "outline" },
+        ]}
+      />
 
     </div>
   );

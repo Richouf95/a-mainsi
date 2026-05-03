@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import CTABanner from "@/app/components/ui/CTABanner";
 
 export default function Home() {
   const [index, setIndex] = useState(0);
@@ -55,7 +56,6 @@ export default function Home() {
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* Hero */}
       <section className="relative max-h-260 h-[calc(100dvh-0px)] flex items-end overflow-hidden">
@@ -228,8 +228,7 @@ export default function Home() {
             </span>
 
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-3xl md:text-4xl lg:text-5xl text-[#7B1C1C] leading-tight mb-6"
+              className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#7B1C1C] leading-tight mb-6"
             >
               Redonner sa juste valeur
               <br />
@@ -311,8 +310,7 @@ export default function Home() {
               Nos produits
             </div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[28px] text-[#7B1C1C] leading-tight text-center mb-4"
+              className="font-serif text-[28px] text-[#7B1C1C] leading-tight text-center mb-4"
             >
               Une gamme issue du
               <br />
@@ -360,8 +358,7 @@ export default function Home() {
                   {/* Contenu visible sur mobile uniquement */}
                   <div className="p-4 lg:hidden">
                     <h3
-                      style={{ fontFamily: "var(--font-serif)" }}
-                      className="text-base font-semibold text-[#7B1C1C]"
+                      className="font-serif text-base font-semibold text-[#7B1C1C]"
                     >
                       {p.name}
                     </h3>
@@ -382,8 +379,7 @@ export default function Home() {
             </p>
 
             <h3
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-3xl text-[#7B1C1C] leading-tight"
+              className="font-serif text-3xl text-[#7B1C1C] leading-tight"
             >
               {products[index].name}
             </h3>
@@ -462,8 +458,7 @@ export default function Home() {
             De la source à la table
           </div>
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-white mb-1.5"
+            className="font-serif text-[28px] text-white mb-1.5"
           >
             Une chaîne de valeur intégrée
           </h2>
@@ -634,8 +629,7 @@ export default function Home() {
           {/* titre */}
           <div className="text-center mb-12">
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-3xl md:text-4xl lg:text-5xl text-[#7B1C1C] leading-tight"
+              className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#7B1C1C] leading-tight"
             >
               Proxilait dans votre poche
             </h2>
@@ -724,8 +718,7 @@ export default function Home() {
           className="mb-8"
         >
           <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] md:text-[32px] text-[#7B1C1C] leading-tight"
+            className="font-serif text-[28px] md:text-[32px] text-[#7B1C1C] leading-tight"
           >
             La parole à notre communauté
           </h2>
@@ -773,8 +766,7 @@ export default function Home() {
             >
               {/* Guillemet décoratif */}
               <span
-                style={{ fontFamily: "var(--font-serif)" }}
-                className={`text-[56px] leading-none mb-[-12px] block ${
+                className={`font-serif text-[56px] leading-none -mb-3 block ${
                   temo.featured ? "text-white/20" : "text-[#7B1C1C]/12"
                 }`}
               >
@@ -798,8 +790,7 @@ export default function Home() {
 
               {/* Citation */}
               <p
-                style={{ fontFamily: "var(--font-serif)" }}
-                className={`text-[14px] leading-[1.75] italic mb-5 flex-1 ${
+                className={`font-serif text-[14px] leading-[1.75] italic mb-5 flex-1 ${
                   temo.featured ? "text-white/90" : "text-[#2C1A0E]"
                 }`}
               >
@@ -887,8 +878,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h2
-                style={{ fontFamily: "var(--font-serif)" }}
-                className="text-[28px] md:text-[30px] text-[#7B1C1C] leading-tight"
+                className="font-serif text-[28px] md:text-[30px] text-[#7B1C1C] leading-tight"
               >
                 Dernières nouvelles
               </h2>
@@ -952,8 +942,7 @@ export default function Home() {
               {/* Body */}
               <div className="p-5">
                 <h3
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="text-base md:text-[17px] text-[#7B1C1C] mb-2 leading-snug"
+                  className="font-serif text-base md:text-[17px] text-[#7B1C1C] mb-2 leading-snug"
                 >
                   A&apos;mansi met en lumière l’innovation laitière africaine à
                   GITEX Africa
@@ -1017,8 +1006,7 @@ export default function Home() {
                     </span>
 
                     <p
-                      style={{ fontFamily: "var(--font-serif)" }}
-                      className="text-[14px] text-[#7B1C1C] leading-snug"
+                      className="font-serif text-[14px] text-[#7B1C1C] leading-snug"
                     >
                       {news.title}
                     </p>
@@ -1047,8 +1035,7 @@ export default function Home() {
         <div className="flex items-end justify-between px-6 md:px-10 mb-10">
           <div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[28px] text-[#7B1C1C] leading-tight"
+              className="font-serif text-[28px] text-[#7B1C1C] leading-tight"
             >
               Ils nous font confiance
             </h2>
@@ -1239,53 +1226,14 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section
-        id="contact"
-        className="bg-[#E87020] py-12 px-8 flex items-center justify-between gap-8 flex-col md:flex-row"
-      >
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-white mb-2"
-          >
-            Prêt à rejoindre la filière ?
-          </h2>
-
-          <p className="text-[14px] text-white/80">
-            Éleveur, distributeur ou consommateur — il y a une place pour vous
-            dans l&apos;écosystème A&apos;mansi.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 w-full md:w-auto"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-55 bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
-          >
-            Commander nos produits
-          </motion.button>
-
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-55 bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer text-center"
-          >
-            Rejoindre Proxilait
-          </motion.button>
-        </motion.div>
-      </section>
+      <CTABanner
+        title="Prêt à rejoindre la filière ?"
+        subtitle="Éleveur, distributeur ou consommateur — il y a une place pour vous dans l'écosystème A'mansi."
+        buttons={[
+          { label: "Commander nos produits", href: "/produits", variant: "primary" },
+          { label: "Rejoindre Proxilait", href: "/proxilait", variant: "outline" },
+        ]}
+      />
 
     </div>
   );

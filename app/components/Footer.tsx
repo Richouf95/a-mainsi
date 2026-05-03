@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { navLinks, CONTACT } from "@/app/lib/constants";
 
 export default function Footer() {
   return (
@@ -29,14 +30,7 @@ export default function Footer() {
             Navigation
           </div>
           <div className="flex flex-col gap-1.5">
-            {[
-              { label: "Accueil", href: "/" },
-              { label: "Nos produits", href: "/produits" },
-              { label: "Proxilait", href: "/proxilait" },
-              { label: "À propos", href: "/apropos" },
-              { label: "Impact", href: "/impact" },
-              { label: "Actualités", href: "/actualites" },
-            ].map((l) => (
+            {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
@@ -72,18 +66,18 @@ export default function Footer() {
             Contact
           </div>
           <div className="flex flex-col gap-1.5">
-            <span className="text-xs text-white/40">Niamey, Niger</span>
+            <span className="text-xs text-white/40">{CONTACT.address}</span>
             <a
-              href="mailto:societeamansi@gmail.com"
+              href={`mailto:${CONTACT.email}`}
               className="text-xs text-white/40 hover:text-white/70 transition-colors"
             >
-              societeamansi@gmail.com
+              {CONTACT.email}
             </a>
             <a
-              href="tel:+22787511111"
+              href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
               className="text-xs text-white/40 hover:text-white/70 transition-colors"
             >
-              +227 87 51 11 11
+              {CONTACT.phone}
             </a>
             <Link
               href="/contact"

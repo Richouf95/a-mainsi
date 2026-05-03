@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CTABanner from "@/app/components/ui/CTABanner";
 
 import { ArrowLeft } from "lucide-react";
 import { allProducts } from "../data";
@@ -26,7 +27,6 @@ export default function ProduitDetail({
   return (
     <div
       className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]"
-      style={{ fontFamily: "var(--font-sans)" }}
     >
       {/* Hero produit */}
       <section
@@ -108,8 +108,7 @@ export default function ProduitDetail({
             {/* Nom */}
             <div>
               <h1
-                style={{ fontFamily: "var(--font-serif)" }}
-                className="text-[40px] md:text-[52px] text-[#7B1C1C] leading-[1.1] mb-4"
+                className="font-serif text-[40px] md:text-[52px] text-[#7B1C1C] leading-[1.1] mb-4"
               >
                 {prod.name}
               </h1>
@@ -162,8 +161,7 @@ export default function ProduitDetail({
               Pourquoi ce produit
             </div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[24px] text-[#7B1C1C] leading-snug"
+              className="font-serif text-[24px] text-[#7B1C1C] leading-snug"
             >
               Ce qui le rend unique
             </h2>
@@ -182,8 +180,7 @@ export default function ProduitDetail({
               >
                 <span className="text-2xl">{h.icon}</span>
                 <span
-                  style={{ fontFamily: "var(--font-serif)" }}
-                  className="text-[15px] text-[#7B1C1C] leading-snug"
+                  className="font-serif text-[15px] text-[#7B1C1C] leading-snug"
                 >
                   {h.label}
                 </span>
@@ -207,8 +204,7 @@ export default function ProduitDetail({
               {prod.category}
             </div>
             <h2
-              style={{ fontFamily: "var(--font-serif)" }}
-              className="text-[26px] text-[#7B1C1C]"
+              className="font-serif text-[26px] text-[#7B1C1C]"
             >
               Dans la même gamme
             </h2>
@@ -256,8 +252,7 @@ export default function ProduitDetail({
                     <div className="p-5 flex items-center justify-between">
                       <div>
                         <div
-                          style={{ fontFamily: "var(--font-serif)" }}
-                          className="text-[16px] text-[#7B1C1C] font-semibold"
+                          className="font-serif text-[16px] text-[#7B1C1C] font-semibold"
                         >
                           {r.name}
                         </div>
@@ -280,48 +275,14 @@ export default function ProduitDetail({
         </section>
       )}
 
-      {/* CTA */}
-      <section className="bg-[#E87020] py-12 px-8 md:px-10 flex items-center justify-between gap-8 flex-col md:flex-row">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            style={{ fontFamily: "var(--font-serif)" }}
-            className="text-[28px] text-white mb-2"
-          >
-            Envie de goûter nos produits ?
-          </h2>
-          <p className="text-[14px] text-white/80">
-            Contactez-nous pour passer commande ou trouver le point de vente le
-            plus proche.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 w-full md:w-auto"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-52 bg-white text-[#E87020] rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-          >
-            Nous contacter
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-52 bg-transparent text-white border-2 border-white/60 rounded-lg px-6 py-3 text-[13px] font-medium cursor-pointer"
-          >
-            Voir tous les produits
-          </motion.button>
-        </motion.div>
-      </section>
+      <CTABanner
+        title="Envie de goûter nos produits ?"
+        subtitle="Contactez-nous pour passer commande ou trouver le point de vente le plus proche."
+        buttons={[
+          { label: "Nous contacter", href: "/contact", variant: "primary" },
+          { label: "Voir tous les produits", href: "/produits", variant: "outline" },
+        ]}
+      />
 
     </div>
   );
