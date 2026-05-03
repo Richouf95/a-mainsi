@@ -37,7 +37,7 @@ export default function HistoireSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative h-[380px] rounded-3xl overflow-hidden"
+          className="relative h-95 rounded-3xl overflow-hidden"
         >
           <Image
             src="/images/a-mansi-hero.png"
