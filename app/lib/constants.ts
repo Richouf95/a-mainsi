@@ -35,6 +35,6 @@ export const CONTACT = {
 
 export const SITE = {
   name: "A'mansi",
-  tagline: "Le bon goût local",
+  tagline: "Le bon goût du lait local",
   baseUrl: "https://amansi.ne",
 } as const;

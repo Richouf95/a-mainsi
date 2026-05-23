@@ -14,13 +14,13 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 bg-black/55" />
 
-      <div className="relative z-10 px-10 pb-12 w-full lg:max-w-170 text-white">
+      <div className="relative z-10 px-5 lg:px-10 pb-12 w-full lg:max-w-200 text-white">
         <span className="inline-block bg-white/20 rounded-full px-3 py-1 text-[10px] sm:text-xs uppercase mb-4">
           Laiterie Fromagerie
         </span>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] mb-3">
-          Le bon goût local
+          Le bon goût du lait local
           <br />
           <strong className="text-yellow-300 font-pumpkin">A mansi</strong>
         </h1>

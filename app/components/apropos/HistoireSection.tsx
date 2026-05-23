@@ -46,14 +46,6 @@ export default function HistoireSection() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#2C1A0E]/40 to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-4">
-              <p className="font-serif text-[14px] text-white italic leading-snug">
-                &ldquo;Le bon goût local&rdquo; — pas un slogan. Une ligne de conduite.
-              </p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
