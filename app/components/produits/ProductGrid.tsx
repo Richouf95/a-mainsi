@@ -20,7 +20,7 @@ function ProductCard({ prod, i }: { prod: Product; i: number }) {
           {prod.image ? (
             <Image
               src={prod.image}
-              alt={prod.name}
+              alt={prod.denomination}
               fill
               sizes="(max-width: 1024px) 100vw, 33vw"
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -45,13 +45,17 @@ function ProductCard({ prod, i }: { prod: Product; i: number }) {
 
         <div className="p-5">
           <div className="font-serif text-[17px] text-[#7B1C1C] font-semibold leading-snug mb-1.5">
-            {prod.name}
+            {prod.denomination}
           </div>
-          <p className="text-[12px] text-[#7a5a4a] leading-relaxed mb-4">{prod.desc}</p>
+          <p className="text-[12px] text-[#7a5a4a] leading-relaxed mb-4 line-clamp-2 h-[39px] overflow-hidden">
+            {prod.mode_utilisation}
+          </p>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#5A8C1A] shrink-0" />
-              <span className="text-[11px] text-[#5A8C1A] font-medium tracking-wide">{prod.volume}</span>
+              <span className="text-[11px] text-[#5A8C1A] font-medium tracking-wide">
+                {prod.quantite.join(", ")}
+              </span>
             </div>
             <div className="w-7 h-7 rounded-full bg-[#F5F0E8] flex items-center justify-center text-[#7B1C1C] text-sm group-hover:bg-[#7B1C1C] group-hover:text-white transition-colors duration-200">
               →
@@ -80,56 +84,56 @@ function SectionHeader({ tag, title, desc }: { tag: string; title: string; desc:
 }
 
 type Props = {
-  laitFrais: Product[];
   yaourts: Product[];
-  fromages: Product[];
-  derives: Product[];
+  fromagesSecs: Product[];
+  fromagesFrais: Product[];
+  beurres: Product[];
 };
 
-export default function ProductGrid({ laitFrais, yaourts, fromages, derives }: Props) {
+export default function ProductGrid({ yaourts, fromagesSecs, fromagesFrais, beurres }: Props) {
   return (
     <>
-      <section id="lait-frais" className="bg-white py-12 px-8 md:px-10">
-        <SectionHeader
-          tag="Lait frais"
-          title="Lait frais pasteurisé"
-          desc="Notre lait frais est collecté quotidiennement auprès de nos éleveurs partenaires et pasteurisé selon les normes les plus strictes pour garantir qualité et fraîcheur."
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {laitFrais.map((prod, i) => <ProductCard key={prod.slug} prod={prod} i={i} />)}
-        </div>
-      </section>
-
-      <section id="yaourts" className="bg-[#F5F0E8] py-12 px-8 md:px-10">
+      <section id="yaourts" className="bg-white py-12 px-8 md:px-10">
         <SectionHeader
           tag="Yaourts"
           title="Yaourts et produits fermentés"
-          desc="Nos yaourts sont fabriqués avec du lait local et des ferments naturels. Disponibles nature ou aromatisés avec des saveurs locales authentiques."
+          desc="Nos yaourts et laits fermentés sont fabriqués avec du lait local et des ferments naturels. Disponibles en différents formats, ils allient tradition et bienfaits nutritionnels."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {yaourts.map((prod, i) => <ProductCard key={prod.slug} prod={prod} i={i} />)}
         </div>
       </section>
 
-      <section id="fromages" className="bg-white py-12 px-8 md:px-10">
+      <section id="fromages-secs" className="bg-[#F5F0E8] py-12 px-8 md:px-10">
         <SectionHeader
-          tag="Fromages"
-          title="Fromages traditionnels"
-          desc="Nos fromages sont élaborés selon des recettes traditionnelles nigériennes, avec le savoir-faire transmis de génération en génération."
+          tag="Fromages secs"
+          title="Tchoukou — fromage sec traditionnel"
+          desc="Le Tchoukou est le fromage sec emblématique du Niger, fabriqué selon des recettes ancestrales. Riche en protéines et calcium, il se déguste en grignotage ou en apéro."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {fromages.map((prod, i) => <ProductCard key={prod.slug} prod={prod} i={i} />)}
+          {fromagesSecs.map((prod, i) => <ProductCard key={prod.slug} prod={prod} i={i} />)}
         </div>
       </section>
 
-      <section id="derives" className="bg-[#F5F0E8] py-12 px-8 md:px-10">
+      <section id="fromages-frais" className="bg-white py-12 px-8 md:px-10">
         <SectionHeader
-          tag="Produits dérivés"
-          title="Beurre et produits transformés"
-          desc="Découvrez nos produits dérivés du lait : beurre traditionnel, crème fraîche et autres spécialités locales."
+          tag="Fromages frais"
+          title="Fromages frais au lait local"
+          desc="Nos fromages frais sont élaborés quotidiennement avec du lait entier de vache. Disponibles en versions nature, sucrée, salée ou aux herbes, ils s'adaptent à toutes vos envies."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {derives.map((prod, i) => <ProductCard key={prod.slug} prod={prod} i={i} />)}
+          {fromagesFrais.map((prod, i) => <ProductCard key={prod.slug} prod={prod} i={i} />)}
+        </div>
+      </section>
+
+      <section id="beurres" className="bg-[#F5F0E8] py-12 px-8 md:px-10">
+        <SectionHeader
+          tag="Beurres"
+          title="Beurres traditionnels"
+          desc="Nos beurres sont extraits du lait de vache selon des méthodes traditionnelles nigériennes. Du Doungoulé brut au Manshanou (Ghee) épicé, ils subliment vos plats et vos recettes."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {beurres.map((prod, i) => <ProductCard key={prod.slug} prod={prod} i={i} />)}
         </div>
       </section>
     </>

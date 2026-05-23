@@ -4,32 +4,10 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { allProducts } from "@/app/produits/data";
 
-const products = [
-  {
-    name: "Tchoukou fin",
-    desc: "Fromage frais local au lait entier, texture crémeuse et riche en goût.",
-    image: "/images/toukou-fin.png",
-    bg: "#FFF8F0",
-    badge: "Phare",
-    badgeBg: "#E87020",
-    meta: "Produit phare",
-  },
-  {
-    name: "Fromage frais",
-    desc: "Fromage frais doux et authentique au lait local, au goût naturel.",
-    image: "/images/fromage-frais-sucre.png",
-    bg: "#F0F8FF",
-    meta: "Artisanal",
-  },
-  {
-    name: "Lait frais sucré",
-    desc: "Lait frais légèrement sucré, riche, naturel et très rafraîchissant.",
-    image: "/images/lait-frais-entier.png",
-    bg: "#FFFDF0",
-    meta: "Naturel",
-  },
-];
+const phares = allProducts.filter((p) => p.badge === "Phare");
+const products = phares.length >= 3 ? phares.slice(0, 3) : allProducts.slice(0, 3);
 
 export default function ProductsSection() {
   const [index, setIndex] = useState(0);
@@ -91,13 +69,17 @@ export default function ProductsSection() {
                   className="h-[72%] lg:h-full flex items-center justify-center relative"
                   style={{ background: p.bg }}
                 >
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover"
-                  />
+                  {p.image ? (
+                    <Image
+                      src={p.image}
+                      alt={p.denomination}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <span className="text-[80px] leading-none">{p.emoji}</span>
+                  )}
                   {p.badge && (
                     <span
                       className="absolute top-3 right-3 text-white text-[9px] font-medium rounded-full px-2.5 py-1 tracking-wide z-10"
@@ -108,8 +90,8 @@ export default function ProductsSection() {
                   )}
                 </div>
                 <div className="p-4 lg:hidden">
-                  <h3 className="font-serif text-base font-semibold text-[#7B1C1C]">{p.name}</h3>
-                  <p className="text-xs text-[#7A5A4A] mt-1 leading-relaxed">{p.desc}</p>
+                  <h3 className="font-serif text-base font-semibold text-[#7B1C1C]">{p.denomination}</h3>
+                  <p className="text-xs text-[#7A5A4A] mt-1 leading-relaxed line-clamp-2">{p.mode_utilisation}</p>
                 </div>
               </div>
             </motion.div>
@@ -124,13 +106,13 @@ export default function ProductsSection() {
           </p>
 
           <h3 className="font-serif text-3xl text-[#7B1C1C] leading-tight">
-            {products[index].name}
+            {products[index].denomination}
           </h3>
 
           <div className="w-8 h-px bg-[#7B1C1C]/25" />
 
-          <p className="text-sm text-[#7A5A4A] leading-relaxed">{products[index].desc}</p>
-          <p className="text-xs text-[#7B1C1C]/45 italic">{products[index].meta}</p>
+          <p className="text-sm text-[#7A5A4A] leading-relaxed">{products[index].mode_utilisation}</p>
+          <p className="text-xs text-[#7B1C1C]/45 italic">{products[index].categorie}</p>
 
           <div className="flex items-center gap-3 mt-2">
             <button

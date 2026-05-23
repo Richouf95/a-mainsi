@@ -15,7 +15,7 @@ export default function RelatedProducts({
   if (products.length === 0) return null;
 
   return (
-    <section className="bg-[#F5F0E8] py-14 px-8 md:px-10">
+    <section className="bg-white py-14 px-8 md:px-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export default function RelatedProducts({
                   {r.image ? (
                     <Image
                       src={r.image}
-                      alt={r.name}
+                      alt={r.denomination}
                       fill
                       sizes="(max-width: 1024px) 100vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -67,10 +67,10 @@ export default function RelatedProducts({
                 </div>
                 <div className="p-5 flex items-center justify-between">
                   <div>
-                    <div className="font-serif text-[16px] text-[#7B1C1C] font-semibold">{r.name}</div>
+                    <div className="font-serif text-[16px] text-[#7B1C1C] font-semibold">{r.denomination}</div>
                     <div className="flex items-center gap-1.5 mt-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#5A8C1A]" />
-                      <span className="text-[11px] text-[#5A8C1A] font-medium">{r.volume}</span>
+                      <span className="text-[11px] text-[#5A8C1A] font-medium">{r.quantite.join(", ")}</span>
                     </div>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-[#F5F0E8] flex items-center justify-center text-[#7B1C1C] group-hover:bg-[#7B1C1C] group-hover:text-white transition-colors duration-200 shrink-0">

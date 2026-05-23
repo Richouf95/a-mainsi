@@ -1,8 +1,8 @@
 const categories = [
-  { label: "Lait frais", href: "#lait-frais" },
   { label: "Yaourts", href: "#yaourts" },
-  { label: "Fromages", href: "#fromages" },
-  { label: "Produits dérivés", href: "#derives" },
+  { label: "Fromages secs", href: "#fromages-secs" },
+  { label: "Fromages frais", href: "#fromages-frais" },
+  { label: "Beurres", href: "#beurres" },
 ];
 
 export default function CategoriesNav() {

@@ -18,20 +18,20 @@ import PointsDeVenteSection from "@/app/components/produits/PointsDeVenteSection
 import { allProducts } from "./data";
 
 export default function Produits() {
-  const laitFrais = allProducts.filter((p) => p.categorySlug === "lait-frais");
-  const yaourts = allProducts.filter((p) => p.categorySlug === "yaourts");
-  const fromages = allProducts.filter((p) => p.categorySlug === "fromages");
-  const derives = allProducts.filter((p) => p.categorySlug === "derives");
+  const yaourts = allProducts.filter((p) => p.categorieSlug === "yaourts");
+  const fromagesSecs = allProducts.filter((p) => p.categorieSlug === "fromages-secs");
+  const fromagesFrais = allProducts.filter((p) => p.categorieSlug === "fromages-frais");
+  const beurres = allProducts.filter((p) => p.categorieSlug === "beurres");
 
   return (
     <div className="min-h-screen max-w-460 mx-auto bg-[#F5F0E8]">
       <HeroSection />
       <CategoriesNav />
       <ProductGrid
-        laitFrais={laitFrais}
         yaourts={yaourts}
-        fromages={fromages}
-        derives={derives}
+        fromagesSecs={fromagesSecs}
+        fromagesFrais={fromagesFrais}
+        beurres={beurres}
       />
       <QualiteSection />
       <PointsDeVenteSection />

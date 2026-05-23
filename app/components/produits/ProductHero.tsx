@@ -16,7 +16,7 @@ export default function ProductHero({ prod }: { prod: Product }) {
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src={prod.image}
-            alt=""
+            alt={prod.denomination}
             fill
             sizes="100vw"
             className="object-cover opacity-10 scale-110 blur-2xl"
@@ -35,7 +35,7 @@ export default function ProductHero({ prod }: { prod: Product }) {
           {prod.image ? (
             <Image
               src={prod.image}
-              alt={prod.name}
+              alt={prod.denomination}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -64,7 +64,7 @@ export default function ProductHero({ prod }: { prod: Product }) {
 
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-[11px] font-medium text-[#5A8C1A] tracking-[0.12em] uppercase border border-[#5A8C1A]/30 bg-[#5A8C1A]/8 px-3 py-1 rounded-full">
-              {prod.category}
+              {prod.categorie}
             </span>
             {prod.badge && (
               <span
@@ -78,14 +78,14 @@ export default function ProductHero({ prod }: { prod: Product }) {
 
           <div>
             <h1 className="font-serif text-[40px] md:text-[52px] text-[#7B1C1C] leading-[1.1] mb-4">
-              {prod.name}
+              {prod.denomination}
             </h1>
-            <p className="text-[15px] text-[#5a3a2a] leading-relaxed max-w-md">{prod.desc}</p>
+            <p className="text-[15px] text-[#5a3a2a] leading-relaxed max-w-md">{prod.mode_utilisation}</p>
           </div>
 
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5A8C1A] shrink-0" />
-            <span className="text-[13px] text-[#5A8C1A] font-medium tracking-wide">{prod.volume}</span>
+            <span className="text-[13px] text-[#5A8C1A] font-medium tracking-wide">{prod.quantite.join(", ")}</span>
           </div>
 
           <div className="flex gap-3 flex-wrap">
