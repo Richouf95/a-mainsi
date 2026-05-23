@@ -60,7 +60,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Bidon",
     mode_utilisation:
       "Riche en probiotiques, il améliore la digestion, renforce l'immunité et favorise la flore intestinale. Peut être utilisé en marinade pour attendrir la viande, dans les gâteaux pour plus de moelleux, ou en boisson (lassi, smoothie), etc.",
-    emoji: "🥛",
+    image: "/images/products/clean/yaourt-nature.png",
     bg: "#F0F8FF",
     badge: "Phare",
     badgeBg: "#E87020",
@@ -93,7 +93,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Bidon",
     mode_utilisation:
       "Peut se consommer nature ou accompagné de fruits, céréales ou noix. Sert aussi à préparer des smoothies, des desserts comme les verrines et des sauces sucrées. Apporte du moelleux aux gâteaux.",
-    image: "/images/yaourt-sucre.png",
+    image: "/images/products/clean/yaourt-sucre.png",
     bg: "#F5FCFF",
     highlights: [
       { icon: "🥛", label: "Lait entier local" },
@@ -125,7 +125,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Bidon",
     mode_utilisation:
       "À consommer frais au petit déjeuner ou en dessert. Ajoutez des fruits secs, raisins, noix, miel.",
-    emoji: "🍮",
+    image: "/images/products/clean/yaourt-nature.png",
     bg: "#FFF8F0",
     highlights: [
       { icon: "🌾", label: "Semoule de mil" },
@@ -154,7 +154,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Bidon",
     mode_utilisation:
       "Peut être bu nature, chaud ou froid. Sert à préparer du café, du thé, des smoothies et des céréales. En cuisine dans les sauces, purées, crêpes et pâtisseries.",
-    image: "/images/lait-frais-entier.png",
+    image: "/images/products/clean/lait-frais-entier-pasterise-wa-gani.png",
     bg: "#F0F8FF",
     highlights: [
       { icon: "✅", label: "Pasteurisé" },
@@ -185,7 +185,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Pot circulaire",
     mode_utilisation:
       "Idéal pour vos Labdourou, Toukoudi, bouillie ou vos desserts. À consommer nature ou avec du miel ou sucre selon votre goût.",
-    image: "/images/kindirmou.png",
+    image: "/images/products/clean/kindirmou-lait-caille.png",
     bg: "#FFF5F5",
     highlights: [
       { icon: "🫙", label: "Pot circulaire" },
@@ -216,7 +216,7 @@ export const allProducts: Product[] = [
     date_limite_consommation: null,
     forme_emballage: "Sachet plastique",
     mode_utilisation: "Idéal pour le grignotage ou en apéro.",
-    image: "/images/toukou-fin.png",
+    image: "/images/products/clean/tchoukou-fin.png",
     bg: "#FFF8F0",
     badge: "Phare",
     badgeBg: "#E87020",
@@ -249,7 +249,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Sachet plastique",
     mode_utilisation:
       "Idéal pour le grignotage ou en apéro, exquis avec le thé ou tisanes.",
-    emoji: "🧀",
+    image: "/images/products/clean/tchoukou-fin.png",
     bg: "#FFFDF0",
     highlights: [
       { icon: "🍯", label: "Légèrement sucré" },
@@ -278,7 +278,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Sachet plastique",
     mode_utilisation:
       "Idéal pour le grignotage ou en apéro, dans vos bouillies, la préparation du Toukoudi ou Labdourou.",
-    emoji: "🧀",
+    image: "/images/products/clean/tchoukou-epais.png",
     bg: "#FFF5E6",
     highlights: [
       { icon: "💪", label: "Très riche en protéines" },
@@ -311,7 +311,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Plastique",
     mode_utilisation:
       "Se consomme nature, en tartine, dans des salades ou sauces. Peut être intégré dans des sandwichs, aux plats chauds comme les gratins, ou aux desserts. Accompagne aussi les fruits et légumes pour un repas sain et léger.",
-    emoji: "🧀",
+    image: "/images/products/clean/fromage-frais-pasterise-nature.png",
     bg: "#F0F8FF",
     highlights: [
       { icon: "🧀", label: "Texture crémeuse" },
@@ -342,7 +342,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Plastique",
     mode_utilisation:
       "Se consomme nature, en tartine, dans des salades ou sauces. Peut être intégré aux plateaux de fromages en desserts ou apéro. Accompagne aussi les fruits et légumes pour un repas sain et léger.",
-    image: "/images/fromage-frais-sucre.png",
+    image: "/images/products/clean/fromage-frais-pasterise-nature.png",
     bg: "#FFFDF0",
     highlights: [
       { icon: "🍯", label: "Légèrement sucré" },
@@ -373,7 +373,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Plastique",
     mode_utilisation:
       "Se consomme nature, en tartine, dans des salades ou sauces. Peut être intégré dans des sandwichs, aux plats chauds comme les gratins. Accompagne aussi les fruits et légumes pour un repas sain et léger.",
-    emoji: "🧂",
+    image: "/images/products/clean/fromage-frais-pasterise-sale.png",
     bg: "#F5FCFF",
     highlights: [
       { icon: "🧂", label: "Saveur salée" },
@@ -403,7 +403,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Sachet plastique",
     mode_utilisation:
       "Se consomme nature, en tartine, dans des salades ou sauces. Peut être intégré dans des sandwichs, aux plats chauds comme les gratins, ou aux desserts. Accompagne aussi les fruits et légumes pour un repas sain et léger.",
-    emoji: "🌿",
+    image: "/images/products/clean/fromage-frais-herbe-fine-et-ail.png",
     bg: "#F0FFF0",
     badge: "Nouveau",
     badgeBg: "#5A8C1A",
@@ -429,7 +429,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Plastique sachet",
     mode_utilisation:
       "Se consomme nature, en tartine, dans des salades ou sauces. Peut être intégré dans des sandwichs, aux plats chauds comme les gratins, ou aux desserts. Accompagne aussi les fruits et légumes pour un repas sain et léger.",
-    emoji: "🔴",
+    image: "/images/products/clean/fromage-frais-pasterise-nature.png",
     bg: "#FFF5F5",
     badge: "Nouveau",
     badgeBg: "#5A8C1A",
@@ -493,7 +493,7 @@ export const allProducts: Product[] = [
     forme_emballage: "Bidon",
     mode_utilisation:
       "S'utilise pour cuire, frire et mijoter. Parfait pour les sauces noires, rouges à l'Africaine, le Zazahé et pour réchauffer la pâte pour un goût plus appétissant.",
-    emoji: "🫙",
+    image: "/images/products/clean/manshanou.png",
     bg: "#FFF5E6",
     badge: "Phare",
     badgeBg: "#E87020",
